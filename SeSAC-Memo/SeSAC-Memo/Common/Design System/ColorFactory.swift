@@ -17,6 +17,7 @@ final class ColorFactory {
         case primary
         case delete
         case background // white, black
+        case neutral    // white
         case neutral200
         case neutral400
         case neutral600
@@ -30,6 +31,8 @@ final class ColorFactory {
             return .systemRed
         case .background:
             return .systemBackground
+        case .neutral:
+            return .white
         case .neutral200:
             return .systemGray6
         case .neutral400:
