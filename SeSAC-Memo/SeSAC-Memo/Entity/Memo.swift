@@ -6,3 +6,25 @@
 //
 
 import Foundation
+
+import RealmSwift
+
+final class Memo: Object {
+    @Persisted var title: String?
+    @Persisted var content: String?
+    @Persisted var createdAt = Date()
+    @Persisted var updatedAt = Date()
+    @Persisted var pinned: Bool
+    
+    @Persisted(primaryKey: true) var objectID: ObjectId
+    
+    convenience init(_ memo: MemoProtocol) {
+        self.init()
+        
+        title = memo.title
+        content = memo.content
+        createdAt = memo.createdAt
+        updatedAt = memo.updatedAt
+        pinned = memo.pinned
+    }
+}
