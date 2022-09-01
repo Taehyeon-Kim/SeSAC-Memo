@@ -29,6 +29,7 @@
 		BD69ED3128C0CA6F00D62240 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */; };
 		BD69ED3328C0D9EB00D62240 /* MemoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */; };
 		BD69ED3728C0ED5C00D62240 /* ColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */; };
+		BD69ED3928C0FA0100D62240 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3828C0FA0100D62240 /* PopUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoProtocol.swift; sourceTree = "<group>"; };
 		BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFactory.swift; sourceTree = "<group>"; };
+		BD69ED3828C0FA0100D62240 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				BD69ED0E28C0A02000D62240 /* PopUpViewController.swift */,
+				BD69ED3828C0FA0100D62240 /* PopUpView.swift */,
 			);
 			path = "Pop Up";
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				BD69ED1B28C0A13200D62240 /* UIView+.swift in Sources */,
 				BD69ED0D28C0A01300D62240 /* MemoWriteViewController.swift in Sources */,
 				BD69ED1D28C0A48000D62240 /* Memo.swift in Sources */,
+				BD69ED3928C0FA0100D62240 /* PopUpView.swift in Sources */,
 				BD69ED1228C0A0EC00D62240 /* BaseView.swift in Sources */,
 				BD69ECED28C09CE300D62240 /* AppDelegate.swift in Sources */,
 				BD69ED2E28C0C95400D62240 /* DeviceType.swift in Sources */,
