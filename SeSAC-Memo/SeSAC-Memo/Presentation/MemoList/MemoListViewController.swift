@@ -7,10 +7,13 @@
 
 import UIKit
 
-final class MemoListViewController: UIViewController {
+final class MemoListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+    }
+    
+    override func configureAttributes() {
+        view.backgroundColor = ColorFactory.shared.create(.background)
     }
 }

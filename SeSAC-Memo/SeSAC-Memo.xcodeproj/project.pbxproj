@@ -28,6 +28,7 @@
 		BD69ED2E28C0C95400D62240 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED2D28C0C95400D62240 /* DeviceType.swift */; };
 		BD69ED3128C0CA6F00D62240 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */; };
 		BD69ED3328C0D9EB00D62240 /* MemoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */; };
+		BD69ED3728C0ED5C00D62240 /* ColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		BD69ED2D28C0C95400D62240 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoProtocol.swift; sourceTree = "<group>"; };
+		BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				BD69ED1028C0A0D000D62240 /* Base */,
+				BD69ED3428C0ED4200D62240 /* Design System */,
 				BD69ED2C28C0C94500D62240 /* Enum */,
 				BD69ED2F28C0CA5F00D62240 /* Helper */,
 				BD69ED1728C0A10700D62240 /* Protocol */,
@@ -210,6 +213,14 @@
 				BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		BD69ED3428C0ED4200D62240 /* Design System */ = {
+			isa = PBXGroup;
+			children = (
+				BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */,
+			);
+			path = "Design System";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD69ED3728C0ED5C00D62240 /* ColorFactory.swift in Sources */,
 				BD69ED1628C0A0FA00D62240 /* BaseTableViewCell.swift in Sources */,
 				BD69ED0B28C0A00100D62240 /* MemoListViewController.swift in Sources */,
 				BD69ED0F28C0A02000D62240 /* PopUpViewController.swift in Sources */,
