@@ -1,0 +1,22 @@
+disabled_rules:
+- line_length
+- trailing_whitespace
+- orphaned_doc_comment
+- nesting
+- function_body_length
+- function_parameter_count
+
+opt_in_rules:
+- anyobject_protocol
+- let_var_whitespace
+
+excluded:
+- SeSAC-Memo/Application
+
+identifier_name:
+  excluded:
+    - id
+    - URL
+
+force_cast:
+    warning
