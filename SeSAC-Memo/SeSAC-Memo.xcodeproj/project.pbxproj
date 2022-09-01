@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD45B02628C1055200C271AA /* MemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45B02528C1055200C271AA /* MemoRepository.swift */; };
 		BD69ECED28C09CE300D62240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ECEC28C09CE300D62240 /* AppDelegate.swift */; };
 		BD69ECEF28C09CE300D62240 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ECEE28C09CE300D62240 /* SceneDelegate.swift */; };
 		BD69ECF628C09CE500D62240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD69ECF528C09CE500D62240 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD45B02528C1055200C271AA /* MemoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRepository.swift; sourceTree = "<group>"; };
 		BD69ECE928C09CE300D62240 /* SeSAC-Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Memo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD69ECEC28C09CE300D62240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD69ECEE28C09CE300D62240 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */,
+				BD45B02528C1055200C271AA /* MemoRepository.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				BD69ED0F28C0A02000D62240 /* PopUpViewController.swift in Sources */,
 				BD69ED3328C0D9EB00D62240 /* MemoProtocol.swift in Sources */,
 				BD69ED1928C0A11400D62240 /* Reusable.swift in Sources */,
+				BD45B02628C1055200C271AA /* MemoRepository.swift in Sources */,
 				BD69ED1B28C0A13200D62240 /* UIView+.swift in Sources */,
 				BD69ED0D28C0A01300D62240 /* MemoWriteViewController.swift in Sources */,
 				BD69ED1D28C0A48000D62240 /* Memo.swift in Sources */,
