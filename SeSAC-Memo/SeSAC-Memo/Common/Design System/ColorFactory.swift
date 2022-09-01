@@ -17,10 +17,13 @@ final class ColorFactory {
         case primary
         case delete
         case background // white, black
-        case neutral    // white
-        case neutral200
-        case neutral400
-        case neutral600
+        case white
+        case grey200
+        case grey400
+        case grey600
+        case grey800
+        case darkGray
+        case black
     }
     
     func create(_ style: ColorStyle) -> UIColor {
@@ -31,14 +34,20 @@ final class ColorFactory {
             return .systemRed
         case .background:
             return .systemBackground
-        case .neutral:
+        case .white:
             return .white
-        case .neutral200:
+        case .grey200:
             return .systemGray6
-        case .neutral400:
+        case .grey400:
             return .systemGray4
-        case .neutral600:
+        case .grey600:
             return .systemGray2
+        case .grey800:
+            return .systemGray
+        case .darkGray:
+            return .darkGray
+        case .black:
+            return .black
         }
     }
 }
