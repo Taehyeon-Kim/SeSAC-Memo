@@ -26,6 +26,7 @@
 		BD69ED2828C0A53B00D62240 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BD69ED2728C0A53B00D62240 /* RealmSwift */; };
 		BD69ED2B28C0A6C700D62240 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BD69ED2A28C0A6C700D62240 /* .swiftlint.yml */; };
 		BD69ED2E28C0C95400D62240 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED2D28C0C95400D62240 /* DeviceType.swift */; };
+		BD69ED3128C0CA6F00D62240 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		BD69ED1C28C0A48000D62240 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		BD69ED2A28C0A6C700D62240 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BD69ED2D28C0C95400D62240 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				BD69ED1028C0A0D000D62240 /* Base */,
 				BD69ED2C28C0C94500D62240 /* Enum */,
+				BD69ED2F28C0CA5F00D62240 /* Helper */,
 				BD69ED1728C0A10700D62240 /* Protocol */,
 				BD69ED0528C09F6400D62240 /* UIKit+ */,
 			);
@@ -196,6 +199,14 @@
 				BD69ED2D28C0C95400D62240 /* DeviceType.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		BD69ED2F28C0CA5F00D62240 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 				BD69ED2E28C0C95400D62240 /* DeviceType.swift in Sources */,
 				BD69ED1428C0A0F100D62240 /* BaseViewController.swift in Sources */,
 				BD69ECEF28C09CE300D62240 /* SceneDelegate.swift in Sources */,
+				BD69ED3128C0CA6F00D62240 /* PreviewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
