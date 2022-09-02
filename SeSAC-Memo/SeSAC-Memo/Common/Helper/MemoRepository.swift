@@ -38,7 +38,7 @@ extension MemoRepository {
     }
     
     func write(_ memo: MemoProtocol) {
-        let memo = Memo(memo)
+        let memo = Memo(memo: memo)
         
         do {
             try database.write {
