@@ -17,7 +17,6 @@ final class MemoListViewModel {
     var memo: Observable<[[Memo]]> = Observable([])
     var memoCount = Observable("메모 개수")
     
-
     func titleForHeaderInSection(at section: Int) -> String? {
         if memo.value.count == 1 {
             return "메모"
