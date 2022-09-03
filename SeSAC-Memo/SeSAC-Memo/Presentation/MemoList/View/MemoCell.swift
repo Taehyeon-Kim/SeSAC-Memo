@@ -59,27 +59,12 @@ extension MemoCell {
 
         if Calendar.current.isDateInToday(date) {
             dateFormatType = .halfTime
-        } else if isDateInWeekday(date) {
+        } else if Date.isDateInWeekday(date) {
             dateFormatType = .day
         } else {
             dateFormatType = .fullWithHalfTime
         }
         
         return DateFormatType.toString(date, to: dateFormatType)
-    }
-    
-    private func isDateInWeekday(_ date: Date) -> Bool {
-        let currentWeekDay = Calendar.current.component(.weekday, from: Date()) - 1
-        let startDate = Date().addingTimeInterval(TimeInterval(86400 * (1 - currentWeekDay)))
-        let endDate = Date().addingTimeInterval(TimeInterval(86400 * (7 - currentWeekDay)))
-        return clearTimeInDate(startDate)...clearTimeInDate(endDate) ~= date
-    }
-    
-    private func clearTimeInDate(_ date: Date) -> Date {
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        return calendar.date(from: DateComponents(year: year, month: month, day: day, hour: 0))!
     }
 }
