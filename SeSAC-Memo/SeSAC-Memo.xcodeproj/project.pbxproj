@@ -34,6 +34,7 @@
 		BD69ED3328C0D9EB00D62240 /* MemoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */; };
 		BD69ED3728C0ED5C00D62240 /* ColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */; };
 		BD69ED3928C0FA0100D62240 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3828C0FA0100D62240 /* PopUpView.swift */; };
+		BD96C5DB28C34E34000621E6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DA28C34E34000621E6 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoProtocol.swift; sourceTree = "<group>"; };
 		BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFactory.swift; sourceTree = "<group>"; };
 		BD69ED3828C0FA0100D62240 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		BD96C5DA28C34E34000621E6 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			children = (
 				BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */,
 				BD45B02528C1055200C271AA /* MemoRepository.swift */,
+				BD96C5DA28C34E34000621E6 /* Observable.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				BD45B02628C1055200C271AA /* MemoRepository.swift in Sources */,
 				BD69ED1B28C0A13200D62240 /* UIView+.swift in Sources */,
 				BD45B02A28C113F300C271AA /* MemoListViewModel.swift in Sources */,
+				BD96C5DB28C34E34000621E6 /* Observable.swift in Sources */,
 				BD69ED0D28C0A01300D62240 /* MemoWriteViewController.swift in Sources */,
 				BD45B02E28C1157C00C271AA /* MemoCell.swift in Sources */,
 				BD69ED1D28C0A48000D62240 /* Memo.swift in Sources */,
