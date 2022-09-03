@@ -14,7 +14,7 @@ protocol MemoCreatable {
     
     func printLocationOfDefaultRealm()
     func write(_ memo: MemoProtocol)
-    func read() -> Results<Memo>
+    func fetch() -> Results<Memo>
     func search(by keyword: String) -> Results<Memo>
     func update(_ memo: Memo, completion: ((Memo) -> Void)?)
     func delete(_ memo: Memo)
@@ -38,7 +38,7 @@ extension MemoRepository {
     }
     
     func write(_ memo: MemoProtocol) {
-        let memo = Memo(memo)
+        let memo = Memo(memo: memo)
         
         do {
             try database.write {
@@ -49,10 +49,10 @@ extension MemoRepository {
         }
     }
     
-    func read() -> Results<Memo> {
+    func fetch() -> Results<Memo> {
         return database.objects(Memo.self).sorted(byKeyPath: "updatedAt", ascending: false)
     }
-    
+
     func search(by keyword: String) -> Results<Memo> {
         return database.objects(Memo.self).where {
             ($0.title.contains(keyword)) || ($0.content.contains(keyword))
