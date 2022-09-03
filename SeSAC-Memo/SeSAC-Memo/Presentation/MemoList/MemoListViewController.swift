@@ -54,8 +54,8 @@ extension MemoListViewController {
             self.rootView.tableView.reloadData()
         }
         
-        memoListViewModel.memoCount.bind { count in
-            self.navigationItem.title = "\(count)개의 메모"
+        memoListViewModel.memoCount.bind { countString in
+            self.navigationItem.title = countString
         }
     }
 }

@@ -35,6 +35,7 @@
 		BD69ED3728C0ED5C00D62240 /* ColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */; };
 		BD69ED3928C0FA0100D62240 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3828C0FA0100D62240 /* PopUpView.swift */; };
 		BD96C5DB28C34E34000621E6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DA28C34E34000621E6 /* Observable.swift */; };
+		BD96C5DE28C37158000621E6 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DD28C37158000621E6 /* Int+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFactory.swift; sourceTree = "<group>"; };
 		BD69ED3828C0FA0100D62240 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		BD96C5DA28C34E34000621E6 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		BD96C5DD28C37158000621E6 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				BD69ED1028C0A0D000D62240 /* Base */,
 				BD69ED3428C0ED4200D62240 /* Design System */,
 				BD69ED2C28C0C94500D62240 /* Enum */,
+				BD96C5DC28C3714E000621E6 /* Foundation+ */,
 				BD69ED2F28C0CA5F00D62240 /* Helper */,
 				BD69ED1728C0A10700D62240 /* Protocol */,
 				BD69ED0528C09F6400D62240 /* UIKit+ */,
@@ -247,6 +250,14 @@
 				BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */,
 			);
 			path = "Design System";
+			sourceTree = "<group>";
+		};
+		BD96C5DC28C3714E000621E6 /* Foundation+ */ = {
+			isa = PBXGroup;
+			children = (
+				BD96C5DD28C37158000621E6 /* Int+.swift */,
+			);
+			path = "Foundation+";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +379,7 @@
 				BD45B02E28C1157C00C271AA /* MemoCell.swift in Sources */,
 				BD69ED1D28C0A48000D62240 /* Memo.swift in Sources */,
 				BD69ED3928C0FA0100D62240 /* PopUpView.swift in Sources */,
+				BD96C5DE28C37158000621E6 /* Int+.swift in Sources */,
 				BD69ED1228C0A0EC00D62240 /* BaseView.swift in Sources */,
 				BD69ECED28C09CE300D62240 /* AppDelegate.swift in Sources */,
 				BD69ED2E28C0C95400D62240 /* DeviceType.swift in Sources */,

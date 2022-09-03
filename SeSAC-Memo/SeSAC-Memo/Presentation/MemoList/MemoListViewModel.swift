@@ -15,7 +15,8 @@ final class MemoListViewModel {
     private let repository = MemoRepository()
     
     var memo: Observable<[[Memo]]> = Observable([])
-    var memoCount = Observable(0)
+    var memoCount = Observable("메모 개수")
+    
 
     func titleForHeaderInSection(at section: Int) -> String? {
         if memo.value.count == 1 {
@@ -64,6 +65,6 @@ extension MemoListViewModel {
         if !pinned.isEmpty { memo.value.append(contentsOf: [pinned]) }
         memo.value.append(contentsOf: [notPinned])
         
-        memoCount.value = memo.value.flatMap { $0 }.count
+        memoCount.value = "\(memo.value.flatMap { $0 }.count.toDecimal())개의 메모"
     }
 }
