@@ -46,7 +46,7 @@ final class MemoCell: BaseTableViewCell {
 
 extension MemoCell {
     
-    func configure(with data: MemoProtocol) {
+    func configure(with data: Memo) {
         titleLabel.text = data.title
         descriptionLabel.text = "\(data.updatedAt) \(data.content ?? "")"
     }
