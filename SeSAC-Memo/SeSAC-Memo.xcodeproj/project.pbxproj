@@ -36,6 +36,7 @@
 		BD69ED3928C0FA0100D62240 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3828C0FA0100D62240 /* PopUpView.swift */; };
 		BD96C5DB28C34E34000621E6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DA28C34E34000621E6 /* Observable.swift */; };
 		BD96C5DE28C37158000621E6 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DD28C37158000621E6 /* Int+.swift */; };
+		BD96C5E028C38584000621E6 /* DateFormatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DF28C38584000621E6 /* DateFormatType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		BD69ED3828C0FA0100D62240 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		BD96C5DA28C34E34000621E6 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		BD96C5DD28C37158000621E6 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		BD96C5DF28C38584000621E6 /* DateFormatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				BD69ED2D28C0C95400D62240 /* DeviceType.swift */,
+				BD96C5DF28C38584000621E6 /* DateFormatType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD69ED3728C0ED5C00D62240 /* ColorFactory.swift in Sources */,
+				BD96C5E028C38584000621E6 /* DateFormatType.swift in Sources */,
 				BD69ED1628C0A0FA00D62240 /* BaseTableViewCell.swift in Sources */,
 				BD69ED0B28C0A00100D62240 /* MemoListViewController.swift in Sources */,
 				BD69ED0F28C0A02000D62240 /* PopUpViewController.swift in Sources */,
