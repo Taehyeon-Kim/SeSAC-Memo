@@ -48,7 +48,7 @@ extension MemoCell {
     
     func configure(with data: Memo) {
         let dateString = checkDateFormat(data.updatedAt)
-        let content = data.content ?? "추가 텍스트 없음"
+        let content = data.content?.trimmingCharacters(in: .newlines) ?? "추가 텍스트 없음"
         
         titleLabel.text = data.title
         descriptionLabel.text = "\(dateString) \(content)"

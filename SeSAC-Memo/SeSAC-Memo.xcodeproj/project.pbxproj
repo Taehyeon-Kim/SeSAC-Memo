@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD2E849A28C47651001AB7D0 /* MemoWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E849928C47651001AB7D0 /* MemoWriteViewModel.swift */; };
 		BD45B02628C1055200C271AA /* MemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45B02528C1055200C271AA /* MemoRepository.swift */; };
 		BD45B02A28C113F300C271AA /* MemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45B02928C113F300C271AA /* MemoListViewModel.swift */; };
 		BD45B02C28C1141000C271AA /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45B02B28C1141000C271AA /* MemoListView.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD2E849928C47651001AB7D0 /* MemoWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWriteViewModel.swift; sourceTree = "<group>"; };
 		BD45B02528C1055200C271AA /* MemoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRepository.swift; sourceTree = "<group>"; };
 		BD45B02928C113F300C271AA /* MemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewModel.swift; sourceTree = "<group>"; };
 		BD45B02B28C1141000C271AA /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				BD69ED0C28C0A01300D62240 /* MemoWriteViewController.swift */,
+				BD2E849928C47651001AB7D0 /* MemoWriteViewModel.swift */,
 				BD96C5E528C3B4D6000621E6 /* View */,
 			);
 			path = MemoWrite;
@@ -399,6 +402,7 @@
 				BD96C5E728C3B4DE000621E6 /* MemoWriteView.swift in Sources */,
 				BD96C5E228C397C9000621E6 /* Date+.swift in Sources */,
 				BD69ED3928C0FA0100D62240 /* PopUpView.swift in Sources */,
+				BD2E849A28C47651001AB7D0 /* MemoWriteViewModel.swift in Sources */,
 				BD96C5DE28C37158000621E6 /* Int+.swift in Sources */,
 				BD69ED1228C0A0EC00D62240 /* BaseView.swift in Sources */,
 				BD69ECED28C09CE300D62240 /* AppDelegate.swift in Sources */,
