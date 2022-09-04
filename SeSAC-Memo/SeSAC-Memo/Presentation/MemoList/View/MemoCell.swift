@@ -53,7 +53,7 @@ extension MemoCell {
         titleLabel.text = data.title
         descriptionLabel.text = "\(dateString) \(content)"
     }
-    
+
     private func checkDateFormat(_ date: Date) -> String {
         var dateFormatType: DateFormatType = .fullWithHalfTime
 

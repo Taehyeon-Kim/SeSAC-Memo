@@ -43,10 +43,9 @@ extension MemoListViewController {
     private func configureSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "검색"
-        searchController.hidesNavigationBarDuringPresentation = false
-        
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = true
+        searchController.searchBar.delegate = self
     }
     
     private func configureTableView() {
@@ -71,13 +70,17 @@ extension MemoListViewController {
         memoListViewModel.memoCount.bind { countString in
             self.navigationItem.title = countString
         }
+        
+        memoListViewModel.isSearchMode.bind { _ in
+            self.rootView.tableView.reloadData()
+        }
     }
 }
 
 extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return memoListViewModel.titleForHeaderInSection(at: section)
+        return memoListViewModel.titleForHeaderInSection(at: section, isSearchMode: memoListViewModel.isSearchMode.value)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -144,5 +147,23 @@ extension UIViewController {
         
         alertController.addAction(okAction)
         present(alertController, animated: true)
+    }
+}
+
+extension MemoListViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        memoListViewModel.isSearchMode.value = true
+        guard let keyword = searchBar.text else { return }
+        memoListViewModel.searchMemo(by: keyword)
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        memoListViewModel.fetchMemo()
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        memoListViewModel.isSearchMode.value = false
     }
 }
