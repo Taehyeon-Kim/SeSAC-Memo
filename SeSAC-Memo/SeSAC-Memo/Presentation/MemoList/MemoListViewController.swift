@@ -30,6 +30,7 @@ final class MemoListViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        memoListViewModel.fetchMemo()
     }
     
     override func configureAttributes() {

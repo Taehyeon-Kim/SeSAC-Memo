@@ -39,14 +39,17 @@ final class MemoWriteViewController: UIViewController {
 extension MemoWriteViewController {
     
     private func configureNavigationBar() {
-        let doneItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(writeMemo))
+        let doneItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneButtonTapped))
         let shareItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: nil)
         navigationController?.navigationBar.tintColor = ColorFactory.shared.create(.primary)
         navigationItem.rightBarButtonItems = [doneItem, shareItem]
     }
     
-    @objc private func writeMemo() {
-
+    @objc private func doneButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func writeMemo() {
         // nil 값일 때 저장 X
         guard let title = rootView.titleTextView.text,
               let content = rootView.contentTextView.text
