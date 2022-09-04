@@ -62,7 +62,7 @@ extension MemoRepository {
     func update(_ memo: Memo, completion: ((Memo) -> Void)? = nil) {
         do {
             try database.write {
-                database.create(Memo.self, value: memo, update: .modified)
+                completion?(memo)
             }
         } catch let error {
             print(error)
@@ -70,7 +70,13 @@ extension MemoRepository {
     }
     
     func delete(_ memo: Memo) {
-        return database.delete(memo)
+        do {
+            try database.write {
+                return database.delete(memo)
+            }
+        } catch let error {
+            print(error)
+        }
     }
     
     func sort(by keyPath: String = "updatedAt") -> Results<Memo> {
