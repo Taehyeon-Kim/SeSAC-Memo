@@ -24,11 +24,14 @@ final class MemoWriteView: BaseView {
     }
     
     override func configureAttributes() {
+        backgroundColor = ColorFactory.shared.create(.background)
+        
         containerStackView.do {
             $0.axis = .vertical
         }
         
         titleTextView.do {
+            $0.backgroundColor = ColorFactory.shared.create(.background)
             $0.becomeFirstResponder()
             $0.textColor = .label
             $0.font = .boldSystemFont(ofSize: 22)
@@ -36,6 +39,7 @@ final class MemoWriteView: BaseView {
         }
         
         contentTextView.do {
+            $0.backgroundColor = ColorFactory.shared.create(.background)
             $0.textColor = .label
             $0.font = .systemFont(ofSize: 17)
             $0.isScrollEnabled = false

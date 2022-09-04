@@ -20,6 +20,8 @@ final class MemoListView: BaseView {
         )
     )
     
+    var writeHandler: (() -> Void)?
+    
     override func configureAttributes() {
         tableView.do {
             $0.backgroundColor = .clear
@@ -27,7 +29,7 @@ final class MemoListView: BaseView {
         }
         
         toolbar.do {
-            let writeItem = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: nil, action: nil)
+            let writeItem = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: nil, action: #selector(writeItemTapped))
             let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             $0.backgroundColor = ColorFactory.shared.create(.background)
             $0.tintColor = ColorFactory.shared.create(.primary)
@@ -46,5 +48,9 @@ final class MemoListView: BaseView {
             $0.trailing.bottom.leading.equalTo(self.safeAreaLayoutGuide)
             $0.height.equalTo(44)
         }
+    }
+    
+    @objc private func writeItemTapped() {
+        writeHandler?()
     }
 }

@@ -61,6 +61,7 @@ extension MemoListViewModel {
         let pinned = task.filter { $0.pinned == true }
         let notPinned = task.filter { $0.pinned == false }
         
+        memo.value.removeAll()
         if !pinned.isEmpty { memo.value.append(contentsOf: [pinned]) }
         memo.value.append(contentsOf: [notPinned])
         

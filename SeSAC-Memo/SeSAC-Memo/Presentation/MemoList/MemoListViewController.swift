@@ -22,7 +22,15 @@ final class MemoListViewController: BaseViewController {
 
         configureSearchController()
         configureTableView()
+        configureToolbar()
         bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        memoListViewModel.fetchMemo()
     }
     
     override func configureAttributes() {
@@ -39,12 +47,18 @@ extension MemoListViewController {
         
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = true
-        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func configureTableView() {
         self.rootView.tableView.delegate = self
         self.rootView.tableView.dataSource = self
+    }
+    
+    private func configureToolbar() {
+        self.rootView.writeHandler = {
+            let memoWriteViewController = MemoWriteViewController()
+            self.navigationController?.pushViewController(memoWriteViewController, animated: true)
+        }
     }
     
     private func bind() {
