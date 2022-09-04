@@ -40,13 +40,22 @@ extension MemoWriteViewController {
     
     private func configureNavigationBar() {
         let doneItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneButtonTapped))
-        let shareItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: nil)
+        let shareItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonTapped))
         navigationController?.navigationBar.tintColor = ColorFactory.shared.create(.primary)
         navigationItem.rightBarButtonItems = [doneItem, shareItem]
     }
     
     @objc private func doneButtonTapped() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func shareButtonTapped() {
+        guard let title = rootView.titleTextView.text,
+              let content = rootView.contentTextView.text
+        else { return }
+
+        let activityViewController = UIActivityViewController(activityItems: ["\(title)\n\n\(content)"], applicationActivities: nil)
+        self.present(activityViewController, animated: true)
     }
     
     func writeMemo() {
