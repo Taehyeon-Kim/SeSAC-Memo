@@ -103,4 +103,27 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         memoListViewModel.cellForRowAt(tableView, indexPath: indexPath)
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completionHaldler in
+            self.presentAlert(title: "정말로 삭제하실건가요?") { _ in
+                self.memoListViewModel.deleteMemo(indexPath: indexPath)
+            }
+            completionHaldler(true)
+        }
+        deleteAction.image = UIImage(systemName: "trash")
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+}
+
+extension UIViewController {
+    
+    func presentAlert(title: String, message: String? = nil, completion: @escaping (UIAlertAction) -> Void) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "취소", style: .cancel)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: completion)
+        alertController.addAction(deleteAction)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
 }

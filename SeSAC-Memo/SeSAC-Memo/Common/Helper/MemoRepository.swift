@@ -70,7 +70,13 @@ extension MemoRepository {
     }
     
     func delete(_ memo: Memo) {
-        return database.delete(memo)
+        do {
+            try database.write {
+                return database.delete(memo)
+            }
+        } catch let error {
+            print(error)
+        }
     }
     
     func sort(by keyPath: String = "updatedAt") -> Results<Memo> {

@@ -67,4 +67,10 @@ extension MemoListViewModel {
         
         memoCount.value = "\(memo.value.flatMap { $0 }.count.toDecimal())개의 메모"
     }
+    
+    func deleteMemo(indexPath: IndexPath) {
+        let memo = memo.value[indexPath.section][indexPath.row]
+        self.memo.value[indexPath.section].remove(at: indexPath.row)
+        repository.delete(memo)
+    }
 }
