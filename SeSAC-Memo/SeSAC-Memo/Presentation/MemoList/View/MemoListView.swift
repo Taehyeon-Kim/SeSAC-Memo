@@ -26,6 +26,7 @@ final class MemoListView: BaseView {
         tableView.do {
             $0.backgroundColor = .clear
             $0.register(MemoCell.self, forCellReuseIdentifier: MemoCell.reuseIdentifier)
+            $0.keyboardDismissMode = .onDrag
         }
         
         toolbar.do {

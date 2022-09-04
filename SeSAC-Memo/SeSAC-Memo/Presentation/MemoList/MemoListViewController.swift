@@ -159,7 +159,14 @@ extension MemoListViewController: UISearchBarDelegate {
     }
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        memoListViewModel.fetchMemo()
+        guard let keyword = searchBar.text else { return true }
+        
+        if keyword == "" {
+            memoListViewModel.fetchMemo()
+        } else {
+            memoListViewModel.searchMemo(by: keyword)
+        }
+        
         return true
     }
     
