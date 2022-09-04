@@ -16,17 +16,23 @@ final class MemoListViewModel {
     
     var memo: Observable<[[Memo]]> = Observable([])
     var memoCount = Observable("메모 개수")
+    var isSearchMode = Observable(false)
     
-    func titleForHeaderInSection(at section: Int) -> String? {
+    func titleForHeaderInSection(at section: Int, isSearchMode: Bool = false) -> String? {
+        
+        if memo.value[section].isEmpty {
+            return nil
+        }
+        
         if memo.value.count == 1 {
-            return "메모"
+            return isSearchMode ? "\(memo.value[section].count)개 찾음" : "메모"
             
         } else {
             if section == 0 {
                 return memo.value[section].isEmpty ? nil : "고정된 메모"
                 
             } else {
-                return "메모"
+                return isSearchMode ? "\(memo.value[section].count)개 찾음" : "메모"
             }
         }
     }
@@ -39,11 +45,11 @@ final class MemoListViewModel {
         return memo.value[section].count
     }
     
-    func cellForRowAt(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+    func cellForRowAt(_ tableView: UITableView, indexPath: IndexPath, keyword: String? = nil) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MemoCell.reuseIdentifier, for: indexPath) as? MemoCell else {
             return UITableViewCell()
         }
-        cell.configure(with: memo.value[indexPath.section][indexPath.row])
+        cell.configure(with: memo.value[indexPath.section][indexPath.row], isSearchMode: isSearchMode.value, keyword: keyword)
         return cell
     }
 }
@@ -91,5 +97,17 @@ extension MemoListViewModel {
                 }
             }
         }
+    }
+    
+    func searchMemo(by keyword: String) {
+        let allMemo = repository.search(by: keyword)
+        
+        var task: [Memo] = []
+        allMemo.forEach { memo in
+            task.append(memo)
+        }
+        
+        memo.value.removeAll()
+        memo.value.append(contentsOf: [task])
     }
 }

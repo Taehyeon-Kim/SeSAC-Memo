@@ -46,14 +46,19 @@ final class MemoCell: BaseTableViewCell {
 
 extension MemoCell {
     
-    func configure(with data: Memo) {
+    func configure(with data: Memo, isSearchMode: Bool = false, keyword: String? = nil) {
         let dateString = checkDateFormat(data.updatedAt)
         let content = data.content?.trimmingCharacters(in: .newlines) ?? "추가 텍스트 없음"
         
         titleLabel.text = data.title
         descriptionLabel.text = "\(dateString) \(content)"
+        
+        let color = isSearchMode ?
+        ColorFactory.shared.create(.primary) : ColorFactory.shared.create(.white)
+        titleLabel.changeTextColor(of: keyword ?? "", color: color)
+        descriptionLabel.changeTextColor(of: keyword ?? "", color: color)
     }
-    
+
     private func checkDateFormat(_ date: Date) -> String {
         var dateFormatType: DateFormatType = .fullWithHalfTime
 
