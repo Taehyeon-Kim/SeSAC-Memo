@@ -106,7 +106,7 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completionHaldler in
-            self.presentAlert(title: "정말로 삭제하실건가요?") { _ in
+            self.presentAlert(title: "정말로 삭제하실건가요?", isIncludedCancel: true) { _ in
                 self.memoListViewModel.deleteMemo(indexPath: indexPath)
             }
             completionHaldler(true)
@@ -114,15 +114,34 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
         deleteAction.image = UIImage(systemName: "trash")
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let pinAction = UIContextualAction(style: .normal, title: nil) { _, _, completionHaldler in
+            self.memoListViewModel.pinMemo(indexPath: indexPath) {
+                self.presentAlert(title: "메모는 최대 5개까지 고정할 수 있어요!")
+            }
+            self.memoListViewModel.fetchMemo()
+            completionHaldler(true)
+        }
+        let memo = memoListViewModel.memo.value[indexPath.section][indexPath.row]
+        pinAction.backgroundColor = ColorFactory.shared.create(.primary)
+        pinAction.image = memo.pinned ? UIImage(systemName: "pin.fill") : UIImage(systemName: "pin")
+        return UISwipeActionsConfiguration(actions: [pinAction])
+    }
 }
 
 extension UIViewController {
     
-    func presentAlert(title: String, message: String? = nil, completion: @escaping (UIAlertAction) -> Void) {
+    func presentAlert(title: String, message: String? = nil, isIncludedCancel: Bool = false, completion: ((UIAlertAction) -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let deleteAction = UIAlertAction(title: "취소", style: .cancel)
+        
+        if isIncludedCancel {
+            let deleteAction = UIAlertAction(title: "취소", style: .cancel)
+            alertController.addAction(deleteAction)
+        }
+
         let okAction = UIAlertAction(title: "확인", style: .default, handler: completion)
-        alertController.addAction(deleteAction)
+        
         alertController.addAction(okAction)
         present(alertController, animated: true)
     }

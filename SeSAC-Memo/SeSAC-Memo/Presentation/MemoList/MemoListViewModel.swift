@@ -73,4 +73,23 @@ extension MemoListViewModel {
         self.memo.value[indexPath.section].remove(at: indexPath.row)
         repository.delete(memo)
     }
+    
+    func pinMemo(indexPath: IndexPath, handler: @escaping () -> Void) {
+        let memo = memo.value[indexPath.section][indexPath.row]
+        let pinnedMemo = self.memo.value.first
+        
+        if memo.pinned {
+            repository.update(memo) { memo in
+                memo.pinned.toggle()
+            }
+        } else {
+            if pinnedMemo?.count ?? 0 >= 5 {
+                handler()
+            } else {
+                repository.update(memo) { memo in
+                    memo.pinned.toggle()
+                }
+            }
+        }
+    }
 }

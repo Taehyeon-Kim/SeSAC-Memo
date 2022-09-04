@@ -62,7 +62,7 @@ extension MemoRepository {
     func update(_ memo: Memo, completion: ((Memo) -> Void)? = nil) {
         do {
             try database.write {
-                database.create(Memo.self, value: memo, update: .modified)
+                completion?(memo)
             }
         } catch let error {
             print(error)
