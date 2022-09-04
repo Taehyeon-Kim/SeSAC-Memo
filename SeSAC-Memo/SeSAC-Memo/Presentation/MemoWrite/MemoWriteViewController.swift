@@ -44,14 +44,6 @@ final class MemoWriteViewController: UIViewController {
             self.rootView.titleTextView.text = memo.title
             self.rootView.contentTextView.text = memo.content
         }
-//        
-//        memoWriteViewModel.title.bind { title in
-//            self.rootView.titleTextView.text = title
-//        }
-//        
-//        memoWriteViewModel.content.bind { content in
-//            self.rootView.contentTextView.text = content
-//        }
         
         memoWriteViewModel.isWritingMode.bind { isWritingMode in
             if isWritingMode {

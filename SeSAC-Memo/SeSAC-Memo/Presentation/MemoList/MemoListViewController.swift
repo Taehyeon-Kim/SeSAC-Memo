@@ -72,7 +72,11 @@ extension MemoListViewController {
             self.navigationItem.title = countString
         }
         
-        memoListViewModel.isSearchMode.bind { _ in
+        memoListViewModel.isSearchMode.bind { isSearchMode in
+            let backButton = UIBarButtonItem()
+            backButton.title = isSearchMode ? "검색" : "메모"
+            self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+            
             self.rootView.tableView.reloadData()
         }
     }
