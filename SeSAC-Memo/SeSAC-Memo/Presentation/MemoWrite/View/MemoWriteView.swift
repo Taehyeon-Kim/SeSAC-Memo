@@ -19,8 +19,6 @@ final class MemoWriteView: BaseView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        configureTextView()
     }
     
     override func configureAttributes() {
@@ -32,7 +30,6 @@ final class MemoWriteView: BaseView {
         
         titleTextView.do {
             $0.backgroundColor = ColorFactory.shared.create(.background)
-            $0.becomeFirstResponder()
             $0.textColor = .label
             $0.font = .boldSystemFont(ofSize: 22)
             $0.isScrollEnabled = false
@@ -60,21 +57,5 @@ final class MemoWriteView: BaseView {
             $0.trailing.leading.equalToSuperview()
             $0.width.equalToSuperview()
         }
-    }
-}
-
-extension MemoWriteView: UITextViewDelegate {
-    
-    private func configureTextView() {
-        titleTextView.delegate = self
-        contentTextView.delegate = self
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" && textView == titleTextView {
-            textView.resignFirstResponder()
-            contentTextView.becomeFirstResponder()
-        }
-        return true
     }
 }
