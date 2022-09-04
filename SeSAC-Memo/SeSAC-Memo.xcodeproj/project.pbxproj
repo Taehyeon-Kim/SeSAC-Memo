@@ -38,6 +38,7 @@
 		BD96C5DE28C37158000621E6 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DD28C37158000621E6 /* Int+.swift */; };
 		BD96C5E028C38584000621E6 /* DateFormatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DF28C38584000621E6 /* DateFormatType.swift */; };
 		BD96C5E228C397C9000621E6 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5E128C397C9000621E6 /* Date+.swift */; };
+		BD96C5E728C3B4DE000621E6 /* MemoWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5E628C3B4DE000621E6 /* MemoWriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		BD96C5DD28C37158000621E6 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		BD96C5DF28C38584000621E6 /* DateFormatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatType.swift; sourceTree = "<group>"; };
 		BD96C5E128C397C9000621E6 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		BD96C5E628C3B4DE000621E6 /* MemoWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				BD69ED0C28C0A01300D62240 /* MemoWriteViewController.swift */,
+				BD96C5E528C3B4D6000621E6 /* View */,
 			);
 			path = MemoWrite;
 			sourceTree = "<group>";
@@ -264,6 +267,14 @@
 				BD96C5E128C397C9000621E6 /* Date+.swift */,
 			);
 			path = "Foundation+";
+			sourceTree = "<group>";
+		};
+		BD96C5E528C3B4D6000621E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD96C5E628C3B4DE000621E6 /* MemoWriteView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +396,7 @@
 				BD69ED0D28C0A01300D62240 /* MemoWriteViewController.swift in Sources */,
 				BD45B02E28C1157C00C271AA /* MemoCell.swift in Sources */,
 				BD69ED1D28C0A48000D62240 /* Memo.swift in Sources */,
+				BD96C5E728C3B4DE000621E6 /* MemoWriteView.swift in Sources */,
 				BD96C5E228C397C9000621E6 /* Date+.swift in Sources */,
 				BD69ED3928C0FA0100D62240 /* PopUpView.swift in Sources */,
 				BD96C5DE28C37158000621E6 /* Int+.swift in Sources */,
