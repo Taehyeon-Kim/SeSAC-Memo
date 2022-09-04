@@ -104,7 +104,7 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        memoListViewModel.cellForRowAt(tableView, indexPath: indexPath)
+        memoListViewModel.cellForRowAt(tableView, indexPath: indexPath, keyword: navigationItem.searchController?.searchBar.text)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

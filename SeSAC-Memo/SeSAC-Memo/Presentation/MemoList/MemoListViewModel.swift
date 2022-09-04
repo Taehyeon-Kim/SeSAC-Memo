@@ -45,11 +45,11 @@ final class MemoListViewModel {
         return memo.value[section].count
     }
     
-    func cellForRowAt(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+    func cellForRowAt(_ tableView: UITableView, indexPath: IndexPath, keyword: String? = nil) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MemoCell.reuseIdentifier, for: indexPath) as? MemoCell else {
             return UITableViewCell()
         }
-        cell.configure(with: memo.value[indexPath.section][indexPath.row])
+        cell.configure(with: memo.value[indexPath.section][indexPath.row], isSearchMode: isSearchMode.value, keyword: keyword)
         return cell
     }
 }
