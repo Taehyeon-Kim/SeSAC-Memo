@@ -10,8 +10,10 @@ import UIKit
 final class MemoWriteViewController: UIViewController {
     
     private let rootView = MemoWriteView()
+    lazy var doneItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneButtonTapped))
+    lazy var shareItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonTapped))
     
-    private let memoWriteViewModel = MemoWriteViewModel()
+    let memoWriteViewModel = MemoWriteViewModel()
     
     override func loadView() {
         self.view = rootView
@@ -21,6 +23,8 @@ final class MemoWriteViewController: UIViewController {
         super.viewDidLoad()
         
         configureNavigationBar()
+        configureTextView()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,13 +38,43 @@ final class MemoWriteViewController: UIViewController {
         
         writeMemo()
     }
+    
+    private func bind() {
+        memoWriteViewModel.memo.bind { memo in
+            self.rootView.titleTextView.text = memo.title
+            self.rootView.contentTextView.text = memo.content
+        }
+//        
+//        memoWriteViewModel.title.bind { title in
+//            self.rootView.titleTextView.text = title
+//        }
+//        
+//        memoWriteViewModel.content.bind { content in
+//            self.rootView.contentTextView.text = content
+//        }
+        
+        memoWriteViewModel.isWritingMode.bind { isWritingMode in
+            if isWritingMode {
+                self.configureNavigationBar()
+                self.rootView.titleTextView.becomeFirstResponder()
+            } else {
+                self.navigationItem.setRightBarButton(nil, animated: true)
+            }
+        }
+        
+        memoWriteViewModel.isEditingMode.bind { isEditingMode in
+            if isEditingMode {
+                self.configureNavigationBar()
+            } else {
+                self.navigationItem.setRightBarButton(nil, animated: true)
+            }
+        }
+    }
 }
 
 extension MemoWriteViewController {
     
     private func configureNavigationBar() {
-        let doneItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneButtonTapped))
-        let shareItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonTapped))
         navigationController?.navigationBar.tintColor = ColorFactory.shared.create(.primary)
         navigationItem.rightBarButtonItems = [doneItem, shareItem]
     }
@@ -66,7 +100,7 @@ extension MemoWriteViewController {
 
         // 내용 없을 때 삭제하기 위함
         if title.isEmpty && (content.isEmpty || content.trimmingCharacters(in: .newlines).isEmpty) {
-            // 내용 없음 - 삭제
+            memoWriteViewModel.delete(memoWriteViewModel.memo.value)
             return
         }
         
@@ -75,6 +109,32 @@ extension MemoWriteViewController {
         let newContent: String? = (content.isEmpty || content.trimmingCharacters(in: .newlines).isEmpty) ? nil : content
         
         let memo = MemoInterface(title: newTitle, content: newContent)
-        memoWriteViewModel.write(memo)
+        
+        if memoWriteViewModel.isWritingMode.value {
+            memoWriteViewModel.write(memo)
+        } else {
+            memoWriteViewModel.update(memoWriteViewModel.memo.value, newTitle: newTitle, newContent: newContent)
+        }
+    }
+}
+
+extension MemoWriteViewController: UITextViewDelegate {
+    
+    private func configureTextView() {
+        rootView.titleTextView.delegate = self
+        rootView.contentTextView.delegate = self
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" && textView == rootView.titleTextView {
+            textView.resignFirstResponder()
+            rootView.contentTextView.becomeFirstResponder()
+        }
+        return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        memoWriteViewModel.isEditingMode.value = true
+        textView.becomeFirstResponder()
     }
 }

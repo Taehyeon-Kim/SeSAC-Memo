@@ -56,6 +56,7 @@ extension MemoListViewController {
     private func configureToolbar() {
         self.rootView.writeHandler = {
             let memoWriteViewController = MemoWriteViewController()
+            memoWriteViewController.memoWriteViewModel.isWritingMode.value = true
             self.navigationController?.pushViewController(memoWriteViewController, animated: true)
         }
     }
@@ -130,6 +131,16 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
         pinAction.backgroundColor = ColorFactory.shared.create(.primary)
         pinAction.image = memo.pinned ? UIImage(systemName: "pin.fill") : UIImage(systemName: "pin")
         return UISwipeActionsConfiguration(actions: [pinAction])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let memoWriteViewController = MemoWriteViewController()
+        let memo = memoListViewModel.memo.value[indexPath.section][indexPath.row]
+        memoWriteViewController.memoWriteViewModel.title.value = memo.title ?? ""
+        memoWriteViewController.memoWriteViewModel.content.value = memo.content ?? ""
+        memoWriteViewController.memoWriteViewModel.isWritingMode.value = false
+        memoWriteViewController.memoWriteViewModel.memo.value = memo
+        self.navigationController?.pushViewController(memoWriteViewController, animated: true)
     }
 }
 
