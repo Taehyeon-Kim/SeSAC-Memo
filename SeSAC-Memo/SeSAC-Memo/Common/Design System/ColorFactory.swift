@@ -16,7 +16,8 @@ final class ColorFactory {
     enum ColorStyle {
         case primary
         case delete
-        case background // white, black
+        case background
+        case cellBackground
         case white
         case grey200
         case grey800
@@ -33,7 +34,9 @@ final class ColorFactory {
         case .delete:
             return .systemRed
         case .background:
-            return .systemBackground
+            return UIColor(named: "background")!
+        case .cellBackground:
+            return UIColor(named: "cellBackground")!
         case .white:
             return .white
         case .grey200:
