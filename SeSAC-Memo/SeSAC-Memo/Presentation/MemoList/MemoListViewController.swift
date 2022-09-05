@@ -8,6 +8,7 @@
 import UIKit
 
 import SeSAC_Memo_Core
+import SeSAC_Memo_UIKit
 
 final class MemoListViewController: BaseViewController {
    

@@ -44,6 +44,12 @@
 		BDC99B1428C627C500E7039A /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1828C0A11400D62240 /* Reusable.swift */; };
 		BDC99B1528C627CA00E7039A /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC99AF928C4EEE400E7039A /* UILabel+.swift */; };
 		BDC99B1628C627CC00E7039A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1A28C0A13200D62240 /* UIView+.swift */; };
+		BDC99B1F28C62A7100E7039A /* SeSAC_Memo_UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BDC99B1E28C62A7100E7039A /* SeSAC_Memo_UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDC99B2228C62A7100E7039A /* SeSAC_Memo_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC99B1C28C62A7100E7039A /* SeSAC_Memo_UIKit.framework */; };
+		BDC99B2328C62A7100E7039A /* SeSAC_Memo_UIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDC99B1C28C62A7100E7039A /* SeSAC_Memo_UIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BDC99B2828C62A9100E7039A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDC99B2728C62A9000E7039A /* Colors.xcassets */; };
+		BDC99B2A28C62A9D00E7039A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDC99B2928C62A9D00E7039A /* Images.xcassets */; };
+		BDC99B2E28C642EF00E7039A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC99B2D28C642EF00E7039A /* ThemeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,16 +60,24 @@
 			remoteGlobalIDString = BDC99B0228C6264500E7039A;
 			remoteInfo = "SeSAC-Memo-Core";
 		};
+		BDC99B2028C62A7100E7039A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD69ECE128C09CE300D62240 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDC99B1B28C62A7100E7039A;
+			remoteInfo = "SeSAC-Memo-UIKit";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		BDC99B0B28C6264500E7039A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
 				BDC99B0A28C6264500E7039A /* SeSAC_Memo_Core.framework in Embed Frameworks */,
+				BDC99B2328C62A7100E7039A /* SeSAC_Memo_UIKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +119,11 @@
 		BDC99AF928C4EEE400E7039A /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		BDC99B0328C6264500E7039A /* SeSAC_Memo_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeSAC_Memo_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC99B0528C6264500E7039A /* SeSAC_Memo_Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeSAC_Memo_Core.h; sourceTree = "<group>"; };
+		BDC99B1C28C62A7100E7039A /* SeSAC_Memo_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeSAC_Memo_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDC99B1E28C62A7100E7039A /* SeSAC_Memo_UIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeSAC_Memo_UIKit.h; sourceTree = "<group>"; };
+		BDC99B2728C62A9000E7039A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BDC99B2928C62A9D00E7039A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BDC99B2D28C642EF00E7039A /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD69ED2828C0A53B00D62240 /* RealmSwift in Frameworks */,
+				BDC99B2228C62A7100E7039A /* SeSAC_Memo_UIKit.framework in Frameworks */,
 				BD69ED2628C0A53B00D62240 /* Realm in Frameworks */,
 				BD69ED2028C0A4CE00D62240 /* SnapKit in Frameworks */,
 				BD69ED2328C0A4D900D62240 /* Then in Frameworks */,
@@ -121,6 +141,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BDC99B0028C6264500E7039A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC99B1928C62A7100E7039A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -145,6 +172,7 @@
 				BD69ED2A28C0A6C700D62240 /* .swiftlint.yml */,
 				BD69ECEB28C09CE300D62240 /* SeSAC-Memo */,
 				BDC99B0428C6264500E7039A /* SeSAC-Memo-Core */,
+				BDC99B1D28C62A7100E7039A /* SeSAC-Memo-UIKit */,
 				BD69ECEA28C09CE300D62240 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,6 +182,7 @@
 			children = (
 				BD69ECE928C09CE300D62240 /* SeSAC-Memo.app */,
 				BDC99B0328C6264500E7039A /* SeSAC_Memo_Core.framework */,
+				BDC99B1C28C62A7100E7039A /* SeSAC_Memo_UIKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,6 +359,33 @@
 			path = "SeSAC-Memo-Core";
 			sourceTree = "<group>";
 		};
+		BDC99B1D28C62A7100E7039A /* SeSAC-Memo-UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				BDC99B2C28C62ADA00E7039A /* Images */,
+				BDC99B2B28C62ACD00E7039A /* Colors */,
+				BDC99B1E28C62A7100E7039A /* SeSAC_Memo_UIKit.h */,
+			);
+			path = "SeSAC-Memo-UIKit";
+			sourceTree = "<group>";
+		};
+		BDC99B2B28C62ACD00E7039A /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				BDC99B2728C62A9000E7039A /* Colors.xcassets */,
+				BDC99B2D28C642EF00E7039A /* ThemeManager.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		BDC99B2C28C62ADA00E7039A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BDC99B2928C62A9D00E7039A /* Images.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -338,6 +394,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDC99B0628C6264500E7039A /* SeSAC_Memo_Core.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC99B1728C62A7100E7039A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC99B1F28C62A7100E7039A /* SeSAC_Memo_UIKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +422,7 @@
 			);
 			dependencies = (
 				BDC99B0828C6264500E7039A /* PBXTargetDependency */,
+				BDC99B2128C62A7100E7039A /* PBXTargetDependency */,
 			);
 			name = "SeSAC-Memo";
 			packageProductDependencies = (
@@ -388,6 +453,24 @@
 			productReference = BDC99B0328C6264500E7039A /* SeSAC_Memo_Core.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		BDC99B1B28C62A7100E7039A /* SeSAC-Memo-UIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDC99B2428C62A7100E7039A /* Build configuration list for PBXNativeTarget "SeSAC-Memo-UIKit" */;
+			buildPhases = (
+				BDC99B1728C62A7100E7039A /* Headers */,
+				BDC99B1828C62A7100E7039A /* Sources */,
+				BDC99B1928C62A7100E7039A /* Frameworks */,
+				BDC99B1A28C62A7100E7039A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SeSAC-Memo-UIKit";
+			productName = "SeSAC-Memo-UIKit";
+			productReference = BDC99B1C28C62A7100E7039A /* SeSAC_Memo_UIKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -403,6 +486,10 @@
 					};
 					BDC99B0228C6264500E7039A = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					BDC99B1B28C62A7100E7039A = {
+						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -426,6 +513,7 @@
 			targets = (
 				BD69ECE828C09CE300D62240 /* SeSAC-Memo */,
 				BDC99B0228C6264500E7039A /* SeSAC-Memo-Core */,
+				BDC99B1B28C62A7100E7039A /* SeSAC-Memo-UIKit */,
 			);
 		};
 /* End PBXProject section */
@@ -445,6 +533,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC99B1A28C62A7100E7039A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC99B2828C62A9100E7039A /* Colors.xcassets in Resources */,
+				BDC99B2A28C62A9D00E7039A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +610,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BDC99B1828C62A7100E7039A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC99B2E28C642EF00E7039A /* ThemeManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -520,6 +625,11 @@
 			isa = PBXTargetDependency;
 			target = BDC99B0228C6264500E7039A /* SeSAC-Memo-Core */;
 			targetProxy = BDC99B0728C6264500E7039A /* PBXContainerItemProxy */;
+		};
+		BDC99B2128C62A7100E7039A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDC99B1B28C62A7100E7039A /* SeSAC-Memo-UIKit */;
+			targetProxy = BDC99B2028C62A7100E7039A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -773,6 +883,73 @@
 			};
 			name = Release;
 		};
+		BDC99B2528C62A7100E7039A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W7P3R7ZL78;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taekki.SeSAC-Memo-UIKit";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BDC99B2628C62A7100E7039A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W7P3R7ZL78;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taekki.SeSAC-Memo-UIKit";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -799,6 +976,15 @@
 			buildConfigurations = (
 				BDC99B0C28C6264500E7039A /* Debug */,
 				BDC99B0D28C6264500E7039A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDC99B2428C62A7100E7039A /* Build configuration list for PBXNativeTarget "SeSAC-Memo-UIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDC99B2528C62A7100E7039A /* Debug */,
+				BDC99B2628C62A7100E7039A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
