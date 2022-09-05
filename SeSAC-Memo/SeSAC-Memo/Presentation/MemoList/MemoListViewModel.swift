@@ -5,10 +5,10 @@
 //  Created by taekki on 2022/09/02.
 //
 
-import Foundation
+import UIKit
 
+import SeSAC_Memo_Core
 import RealmSwift
-import SwiftUI
 
 final class MemoListViewModel {
     

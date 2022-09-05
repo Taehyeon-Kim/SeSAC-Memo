@@ -7,6 +7,8 @@
 
 import UIKit
 
+import SeSAC_Memo_Core
+
 final class PopUpViewController: BaseViewController {
     
     private let rootView = PopUpView()

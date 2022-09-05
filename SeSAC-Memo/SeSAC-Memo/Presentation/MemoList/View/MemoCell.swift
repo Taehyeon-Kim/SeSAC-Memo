@@ -7,6 +7,8 @@
 
 import UIKit
 
+import SeSAC_Memo_Core
+
 final class MemoCell: BaseTableViewCell {
     
     private lazy var containerVStackView = UIStackView(

@@ -7,6 +7,7 @@
 
 import UIKit
 
+import SeSAC_Memo_Core
 import SnapKit
 import Then
 

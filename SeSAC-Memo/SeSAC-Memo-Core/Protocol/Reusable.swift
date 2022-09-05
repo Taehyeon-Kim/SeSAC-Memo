@@ -7,24 +7,24 @@
 
 import UIKit
 
-protocol Reusable {
+public protocol Reusable {
     static var reuseIdentifier: String { get }
 }
 
 extension UIViewController: Reusable {
-    static var reuseIdentifier: String {
+    public static var reuseIdentifier: String {
         return String(describing: self)
     }
 }
 
 extension UICollectionViewCell: Reusable {
-    static var reuseIdentifier: String {
+    public static var reuseIdentifier: String {
         return String(describing: self)
     }
 }
 
 extension UITableViewCell: Reusable {
-    static var reuseIdentifier: String {
+    public static var reuseIdentifier: String {
         return String(describing: self)
     }
 }
