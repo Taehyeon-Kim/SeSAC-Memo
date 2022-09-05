@@ -16,7 +16,7 @@ final class MemoCell: BaseTableViewCell {
     private let descriptionLabel = UILabel()
     
     override func configureAttributes() {
-        backgroundColor = ColorFactory.shared.create(.darkGray)
+        backgroundColor = ColorFactory.shared.create(.cellBackground)
         
         containerVStackView.do {
             $0.axis = .vertical
@@ -24,7 +24,7 @@ final class MemoCell: BaseTableViewCell {
         }
         
         titleLabel.do {
-            $0.textColor = ColorFactory.shared.create(.white)
+            $0.textColor = ColorFactory.shared.create(.label)
             $0.font = .boldSystemFont(ofSize: 17)
         }
         
