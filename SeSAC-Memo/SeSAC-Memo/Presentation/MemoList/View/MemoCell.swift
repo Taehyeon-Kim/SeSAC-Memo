@@ -42,19 +42,25 @@ final class MemoCell: BaseTableViewCell {
             $0.trailing.leading.equalToSuperview().inset(20)
         }
     }
+    
+    override func prepareForReuse() {
+        titleLabel.textColor = ColorFactory.shared.create(.label)
+        descriptionLabel.textColor = ColorFactory.shared.create(.label)
+    }
 }
 
 extension MemoCell {
     
     func configure(with data: Memo, isSearchMode: Bool = false, keyword: String? = nil) {
         let dateString = checkDateFormat(data.updatedAt)
+        let title = data.title ?? "제목 없음"
         let content = data.content?.trimmingCharacters(in: .newlines) ?? "추가 텍스트 없음"
         
-        titleLabel.text = data.title
+        titleLabel.text = "\(title)"
         descriptionLabel.text = "\(dateString) \(content)"
         
         let color = isSearchMode ?
-        ColorFactory.shared.create(.primary) : ColorFactory.shared.create(.white)
+        ColorFactory.shared.create(.primary) : ColorFactory.shared.create(.label)
         titleLabel.changeTextColor(of: keyword ?? "", color: color)
         descriptionLabel.changeTextColor(of: keyword ?? "", color: color)
     }

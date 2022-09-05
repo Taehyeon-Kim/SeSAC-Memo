@@ -30,8 +30,14 @@ final class MemoListViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        memoListViewModel.fetchMemo()
+        
         checkFirstLaunch()
+        
+        if self.memoListViewModel.isSearchMode.value {
+            self.memoListViewModel.searchMemo(by: self.memoListViewModel.searchKeyword.value)
+        } else {
+            self.memoListViewModel.fetchMemo()
+        }
     }
     
     override func configureAttributes() {
@@ -57,9 +63,12 @@ extension MemoListViewController {
     private func configureSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "검색"
+        searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
+        searchController.searchBar.tintColor = ColorFactory.shared.create(.primary)
+        searchController.searchBar.delegate = self
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = true
-        searchController.searchBar.delegate = self
+        
     }
     
     private func configureTableView() {
@@ -130,6 +139,12 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completionHaldler in
             self.presentAlert(title: "정말로 삭제하실건가요?", isIncludedCancel: true) { _ in
                 self.memoListViewModel.deleteMemo(indexPath: indexPath)
+                
+                if self.memoListViewModel.isSearchMode.value {
+                    self.memoListViewModel.searchMemo(by: self.memoListViewModel.searchKeyword.value)
+                } else {
+                    self.memoListViewModel.fetchMemo()
+                }
             }
             completionHaldler(true)
         }
@@ -142,7 +157,13 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
             self.memoListViewModel.pinMemo(indexPath: indexPath) {
                 self.presentAlert(title: "메모는 최대 5개까지 고정할 수 있어요!")
             }
-            self.memoListViewModel.fetchMemo()
+            
+            if self.memoListViewModel.isSearchMode.value {
+                self.memoListViewModel.searchMemo(by: self.memoListViewModel.searchKeyword.value)
+            } else {
+                self.memoListViewModel.fetchMemo()
+            }
+            
             completionHaldler(true)
         }
         let memo = memoListViewModel.memo.value[indexPath.section][indexPath.row]
@@ -184,11 +205,13 @@ extension MemoListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         memoListViewModel.isSearchMode.value = true
         guard let keyword = searchBar.text else { return }
+        memoListViewModel.searchKeyword.value = keyword
         memoListViewModel.searchMemo(by: keyword)
     }
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
         guard let keyword = searchBar.text else { return true }
+        memoListViewModel.searchKeyword.value = keyword
         
         if keyword == "" {
             memoListViewModel.fetchMemo()
@@ -201,5 +224,6 @@ extension MemoListViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         memoListViewModel.isSearchMode.value = false
+        memoListViewModel.fetchMemo()
     }
 }

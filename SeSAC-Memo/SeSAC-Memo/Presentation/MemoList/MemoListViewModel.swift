@@ -17,6 +17,7 @@ final class MemoListViewModel {
     var memo: Observable<[[Memo]]> = Observable([])
     var memoCount = Observable("메모 개수")
     var isSearchMode = Observable(false)
+    var searchKeyword = Observable("")
     
     func titleForHeaderInSection(at section: Int, isSearchMode: Bool = false) -> String? {
         
@@ -82,14 +83,16 @@ extension MemoListViewModel {
     
     func pinMemo(indexPath: IndexPath, handler: @escaping () -> Void) {
         let memo = memo.value[indexPath.section][indexPath.row]
-        let pinnedMemo = self.memo.value.first
         
+        fetchMemo()
+        let pinned = self.memo.value.flatMap { $0 }.filter { $0.pinned == true }
+
         if memo.pinned {
             repository.update(memo) { memo in
                 memo.pinned.toggle()
             }
         } else {
-            if pinnedMemo?.count ?? 0 >= 5 {
+            if pinned.count >= 5 {
                 handler()
             } else {
                 repository.update(memo) { memo in

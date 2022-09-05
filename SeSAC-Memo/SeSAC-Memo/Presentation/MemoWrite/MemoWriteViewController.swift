@@ -13,6 +13,7 @@ final class MemoWriteViewController: UIViewController {
     lazy var doneItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneButtonTapped))
     lazy var shareItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonTapped))
     
+    private let memoListViewModel = MemoListViewModel()
     let memoWriteViewModel = MemoWriteViewModel()
     
     override func loadView() {
@@ -92,7 +93,9 @@ extension MemoWriteViewController {
 
         // 내용 없을 때 삭제하기 위함
         if title.isEmpty && (content.isEmpty || content.trimmingCharacters(in: .newlines).isEmpty) {
-            memoWriteViewModel.delete(memoWriteViewModel.memo.value)
+            if !memoWriteViewModel.isWritingMode.value {
+                memoWriteViewModel.delete(memoWriteViewModel.memo.value)
+            }
             return
         }
         

@@ -15,19 +15,17 @@ final class PopUpView: BaseView {
     private let dimmedView = UIView()
     private let containerView = UIView()
     private let messageLabel = UILabel()
-    let confirmButton = UIButton()
-    
-    private let colorFactory = ColorFactory.shared
+    lazy var confirmButton = UIButton()
     
     override func configureAttributes() {
         dimmedView.do {
-            $0.alpha = 0.8
-            $0.backgroundColor = colorFactory.create(.black)
+            $0.alpha = 0.9
+            $0.backgroundColor = ColorFactory.shared.create(.black)
         }
         
         containerView.do {
-            $0.backgroundColor = colorFactory.create(.darkGray)
-            $0.layer.cornerRadius = 8
+            $0.backgroundColor = ColorFactory.shared.create(.popUp)
+            $0.layer.cornerRadius = 12
         }
         
         messageLabel.do {
@@ -39,14 +37,14 @@ final class PopUpView: BaseView {
             당신만의 메모를 작성하고
             관리해보세요!
             """
-            $0.textColor = colorFactory.create(.white)
+            $0.textColor = ColorFactory.shared.create(.label)
             $0.font = .boldSystemFont(ofSize: 18)
         }
         
         confirmButton.do {
-            $0.backgroundColor = colorFactory.create(.primary)
+            $0.backgroundColor = ColorFactory.shared.create(.primary)
             $0.setTitle("확인", for: .normal)
-            $0.setTitleColor(colorFactory.create(.white), for: .normal)
+            $0.setTitleColor(ColorFactory.shared.create(.white), for: .normal)
             $0.layer.cornerRadius = 8
         }
     }
