@@ -15,13 +15,13 @@ final class PopUpView: BaseView {
     private let dimmedView = UIView()
     private let containerView = UIView()
     private let messageLabel = UILabel()
-    private let confirmButton = UIButton()
+    let confirmButton = UIButton()
     
     private let colorFactory = ColorFactory.shared
     
     override func configureAttributes() {
         dimmedView.do {
-            $0.alpha = 0.5
+            $0.alpha = 0.8
             $0.backgroundColor = colorFactory.create(.black)
         }
         

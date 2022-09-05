@@ -31,10 +31,24 @@ final class MemoListViewController: BaseViewController {
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         memoListViewModel.fetchMemo()
+        checkFirstLaunch()
     }
     
     override func configureAttributes() {
         view.backgroundColor = ColorFactory.shared.create(.background)
+    }
+    
+    func checkFirstLaunch() {
+        let isFirstLaunch = UserDefaults.standard.object(forKey: "isFirstLaunch")
+        
+        if isFirstLaunch == nil || isFirstLaunch as? Bool == true {
+            let popUpViewController = PopUpViewController()
+            popUpViewController.modalPresentationStyle = .overFullScreen
+            popUpViewController.modalTransitionStyle = .crossDissolve
+            present(popUpViewController, animated: true)
+        }
+        
+        UserDefaults.standard.set(false, forKey: "isFirstLaunch")
     }
 }
 

@@ -17,5 +17,11 @@ final class PopUpViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rootView.confirmButton.addTarget(self, action: #selector(confirmButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func confirmButtonTapped() {
+        dismiss(animated: true)
     }
 }
