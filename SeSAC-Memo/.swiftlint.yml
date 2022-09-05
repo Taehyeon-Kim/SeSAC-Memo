@@ -5,10 +5,13 @@ disabled_rules:
 - nesting
 - function_body_length
 - function_parameter_count
+- force_try
 
 opt_in_rules:
 - anyobject_protocol
 - let_var_whitespace
+- force_cast
+
 
 excluded:
 - SeSAC-Memo/Application
