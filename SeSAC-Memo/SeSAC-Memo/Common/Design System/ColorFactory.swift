@@ -19,11 +19,11 @@ final class ColorFactory {
         case background // white, black
         case white
         case grey200
-        case grey400
-        case grey600
         case grey800
         case darkGray
         case black
+        case popUp
+        case label
     }
     
     func create(_ style: ColorStyle) -> UIColor {
@@ -38,16 +38,16 @@ final class ColorFactory {
             return .white
         case .grey200:
             return .systemGray6
-        case .grey400:
-            return .systemGray4
-        case .grey600:
-            return .systemGray2
         case .grey800:
             return .systemGray
         case .darkGray:
             return .darkGray
         case .black:
             return .black
+        case .popUp:
+            return UIColor(named: "popUp")!
+        case .label:
+            return .label
         }
     }
 }
