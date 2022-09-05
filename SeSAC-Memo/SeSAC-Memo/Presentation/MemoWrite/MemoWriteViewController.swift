@@ -93,7 +93,7 @@ extension MemoWriteViewController {
 
         // 내용 없을 때 삭제하기 위함
         if title.isEmpty && (content.isEmpty || content.trimmingCharacters(in: .newlines).isEmpty) {
-            if !memoListViewModel.memo.value.isEmpty {
+            if !memoWriteViewModel.isWritingMode.value {
                 memoWriteViewModel.delete(memoWriteViewModel.memo.value)
             }
             return
