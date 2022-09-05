@@ -48,9 +48,10 @@ extension MemoCell {
     
     func configure(with data: Memo, isSearchMode: Bool = false, keyword: String? = nil) {
         let dateString = checkDateFormat(data.updatedAt)
+        let title = data.title ?? "제목 없음"
         let content = data.content?.trimmingCharacters(in: .newlines) ?? "추가 텍스트 없음"
         
-        titleLabel.text = data.title
+        titleLabel.text = "\(title)"
         descriptionLabel.text = "\(dateString) \(content)"
         
         let color = isSearchMode ?
