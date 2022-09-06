@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SeSAC_Memo_UIKit
 
 final class MemoWriteViewController: UIViewController {
     
     private let rootView = MemoWriteView()
     lazy var doneItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneButtonTapped))
-    lazy var shareItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonTapped))
+    lazy var shareItem = UIBarButtonItem(image: .icnShare, style: .plain, target: self, action: #selector(shareButtonTapped))
     
     private let memoListViewModel = MemoListViewModel()
     let memoWriteViewModel = MemoWriteViewModel()
@@ -68,7 +69,7 @@ final class MemoWriteViewController: UIViewController {
 extension MemoWriteViewController {
     
     private func configureNavigationBar() {
-        navigationController?.navigationBar.tintColor = ColorFactory.shared.create(.primary)
+        navigationController?.navigationBar.tintColor = ThemeManager.currentTheme().pointColor
         navigationItem.rightBarButtonItems = [doneItem, shareItem]
     }
     
@@ -103,7 +104,7 @@ extension MemoWriteViewController {
         let newTitle: String? = title.isEmpty ? nil : title
         let newContent: String? = (content.isEmpty || content.trimmingCharacters(in: .newlines).isEmpty) ? nil : content
         
-        let memo = MemoInterface(title: newTitle, content: newContent)
+        let memo = MemoPresentationModel(title: newTitle, content: newContent)
         
         if memoWriteViewModel.isWritingMode.value {
             memoWriteViewModel.write(memo)

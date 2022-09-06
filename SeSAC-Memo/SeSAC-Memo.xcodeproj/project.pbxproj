@@ -18,12 +18,7 @@
 		BD69ECF928C09CE500D62240 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD69ECF728C09CE500D62240 /* LaunchScreen.storyboard */; };
 		BD69ED0B28C0A00100D62240 /* MemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED0A28C0A00100D62240 /* MemoListViewController.swift */; };
 		BD69ED0D28C0A01300D62240 /* MemoWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED0C28C0A01300D62240 /* MemoWriteViewController.swift */; };
-		BD69ED0F28C0A02000D62240 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED0E28C0A02000D62240 /* PopUpViewController.swift */; };
-		BD69ED1228C0A0EC00D62240 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1128C0A0EC00D62240 /* BaseView.swift */; };
-		BD69ED1428C0A0F100D62240 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1328C0A0F100D62240 /* BaseViewController.swift */; };
-		BD69ED1628C0A0FA00D62240 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1528C0A0FA00D62240 /* BaseTableViewCell.swift */; };
-		BD69ED1928C0A11400D62240 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1828C0A11400D62240 /* Reusable.swift */; };
-		BD69ED1B28C0A13200D62240 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1A28C0A13200D62240 /* UIView+.swift */; };
+		BD69ED0F28C0A02000D62240 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED0E28C0A02000D62240 /* WelcomeViewController.swift */; };
 		BD69ED1D28C0A48000D62240 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1C28C0A48000D62240 /* Memo.swift */; };
 		BD69ED2028C0A4CE00D62240 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BD69ED1F28C0A4CE00D62240 /* SnapKit */; };
 		BD69ED2328C0A4D900D62240 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BD69ED2228C0A4D900D62240 /* Then */; };
@@ -33,15 +28,63 @@
 		BD69ED2E28C0C95400D62240 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED2D28C0C95400D62240 /* DeviceType.swift */; };
 		BD69ED3128C0CA6F00D62240 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */; };
 		BD69ED3328C0D9EB00D62240 /* MemoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */; };
-		BD69ED3728C0ED5C00D62240 /* ColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */; };
-		BD69ED3928C0FA0100D62240 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3828C0FA0100D62240 /* PopUpView.swift */; };
+		BD69ED3928C0FA0100D62240 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED3828C0FA0100D62240 /* WelcomeView.swift */; };
+		BD81384D28C729E700BE3901 /* MemoPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81384C28C729E700BE3901 /* MemoPresentationModel.swift */; };
+		BD81385328C72DE300BE3901 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81385228C72DE300BE3901 /* UIImage+.swift */; };
+		BD81385528C730FB00BE3901 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81385428C730FB00BE3901 /* UIViewController+.swift */; };
 		BD96C5DB28C34E34000621E6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DA28C34E34000621E6 /* Observable.swift */; };
-		BD96C5DE28C37158000621E6 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DD28C37158000621E6 /* Int+.swift */; };
 		BD96C5E028C38584000621E6 /* DateFormatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DF28C38584000621E6 /* DateFormatType.swift */; };
-		BD96C5E228C397C9000621E6 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5E128C397C9000621E6 /* Date+.swift */; };
 		BD96C5E728C3B4DE000621E6 /* MemoWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5E628C3B4DE000621E6 /* MemoWriteView.swift */; };
-		BDC99AFA28C4EEE400E7039A /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC99AF928C4EEE400E7039A /* UILabel+.swift */; };
+		BDC99B0628C6264500E7039A /* SeSAC_Memo_Core.h in Headers */ = {isa = PBXBuildFile; fileRef = BDC99B0528C6264500E7039A /* SeSAC_Memo_Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDC99B0928C6264500E7039A /* SeSAC_Memo_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC99B0328C6264500E7039A /* SeSAC_Memo_Core.framework */; };
+		BDC99B0A28C6264500E7039A /* SeSAC_Memo_Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDC99B0328C6264500E7039A /* SeSAC_Memo_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BDC99B0F28C6274800E7039A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1128C0A0EC00D62240 /* BaseView.swift */; };
+		BDC99B1028C627BA00E7039A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1328C0A0F100D62240 /* BaseViewController.swift */; };
+		BDC99B1128C627BC00E7039A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1528C0A0FA00D62240 /* BaseTableViewCell.swift */; };
+		BDC99B1228C627C000E7039A /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5DD28C37158000621E6 /* Int+.swift */; };
+		BDC99B1328C627C200E7039A /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C5E128C397C9000621E6 /* Date+.swift */; };
+		BDC99B1428C627C500E7039A /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1828C0A11400D62240 /* Reusable.swift */; };
+		BDC99B1528C627CA00E7039A /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC99AF928C4EEE400E7039A /* UILabel+.swift */; };
+		BDC99B1628C627CC00E7039A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69ED1A28C0A13200D62240 /* UIView+.swift */; };
+		BDC99B1F28C62A7100E7039A /* SeSAC_Memo_UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BDC99B1E28C62A7100E7039A /* SeSAC_Memo_UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDC99B2228C62A7100E7039A /* SeSAC_Memo_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC99B1C28C62A7100E7039A /* SeSAC_Memo_UIKit.framework */; };
+		BDC99B2328C62A7100E7039A /* SeSAC_Memo_UIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDC99B1C28C62A7100E7039A /* SeSAC_Memo_UIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BDC99B2828C62A9100E7039A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDC99B2728C62A9000E7039A /* Colors.xcassets */; };
+		BDC99B2A28C62A9D00E7039A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDC99B2928C62A9D00E7039A /* Images.xcassets */; };
+		BDC99B2E28C642EF00E7039A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC99B2D28C642EF00E7039A /* ThemeManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BDC99B0728C6264500E7039A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD69ECE128C09CE300D62240 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDC99B0228C6264500E7039A;
+			remoteInfo = "SeSAC-Memo-Core";
+		};
+		BDC99B2028C62A7100E7039A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD69ECE128C09CE300D62240 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDC99B1B28C62A7100E7039A;
+			remoteInfo = "SeSAC-Memo-UIKit";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BDC99B0B28C6264500E7039A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BDC99B0A28C6264500E7039A /* SeSAC_Memo_Core.framework in Embed Frameworks */,
+				BDC99B2328C62A7100E7039A /* SeSAC_Memo_UIKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BD2E849928C47651001AB7D0 /* MemoWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWriteViewModel.swift; sourceTree = "<group>"; };
@@ -57,7 +100,7 @@
 		BD69ECFA28C09CE500D62240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD69ED0A28C0A00100D62240 /* MemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewController.swift; sourceTree = "<group>"; };
 		BD69ED0C28C0A01300D62240 /* MemoWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWriteViewController.swift; sourceTree = "<group>"; };
-		BD69ED0E28C0A02000D62240 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		BD69ED0E28C0A02000D62240 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BD69ED1128C0A0EC00D62240 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		BD69ED1328C0A0F100D62240 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BD69ED1528C0A0FA00D62240 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -68,14 +111,23 @@
 		BD69ED2D28C0C95400D62240 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoProtocol.swift; sourceTree = "<group>"; };
-		BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFactory.swift; sourceTree = "<group>"; };
-		BD69ED3828C0FA0100D62240 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		BD69ED3828C0FA0100D62240 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		BD81384C28C729E700BE3901 /* MemoPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoPresentationModel.swift; sourceTree = "<group>"; };
+		BD81385228C72DE300BE3901 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		BD81385428C730FB00BE3901 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		BD96C5DA28C34E34000621E6 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		BD96C5DD28C37158000621E6 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		BD96C5DF28C38584000621E6 /* DateFormatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatType.swift; sourceTree = "<group>"; };
 		BD96C5E128C397C9000621E6 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		BD96C5E628C3B4DE000621E6 /* MemoWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWriteView.swift; sourceTree = "<group>"; };
 		BDC99AF928C4EEE400E7039A /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		BDC99B0328C6264500E7039A /* SeSAC_Memo_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeSAC_Memo_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDC99B0528C6264500E7039A /* SeSAC_Memo_Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeSAC_Memo_Core.h; sourceTree = "<group>"; };
+		BDC99B1C28C62A7100E7039A /* SeSAC_Memo_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeSAC_Memo_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDC99B1E28C62A7100E7039A /* SeSAC_Memo_UIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeSAC_Memo_UIKit.h; sourceTree = "<group>"; };
+		BDC99B2728C62A9000E7039A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BDC99B2928C62A9D00E7039A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BDC99B2D28C642EF00E7039A /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +136,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD69ED2828C0A53B00D62240 /* RealmSwift in Frameworks */,
+				BDC99B2228C62A7100E7039A /* SeSAC_Memo_UIKit.framework in Frameworks */,
 				BD69ED2628C0A53B00D62240 /* Realm in Frameworks */,
 				BD69ED2028C0A4CE00D62240 /* SnapKit in Frameworks */,
 				BD69ED2328C0A4D900D62240 /* Then in Frameworks */,
+				BDC99B0928C6264500E7039A /* SeSAC_Memo_Core.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC99B0028C6264500E7039A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC99B1928C62A7100E7039A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,8 +164,8 @@
 		BD45B02F28C1158000C271AA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BD45B02B28C1141000C271AA /* MemoListView.swift */,
 				BD45B02D28C1157C00C271AA /* MemoCell.swift */,
+				BD45B02B28C1141000C271AA /* MemoListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,6 +175,8 @@
 			children = (
 				BD69ED2A28C0A6C700D62240 /* .swiftlint.yml */,
 				BD69ECEB28C09CE300D62240 /* SeSAC-Memo */,
+				BDC99B0428C6264500E7039A /* SeSAC-Memo-Core */,
+				BDC99B1D28C62A7100E7039A /* SeSAC-Memo-UIKit */,
 				BD69ECEA28C09CE300D62240 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				BD69ECE928C09CE300D62240 /* SeSAC-Memo.app */,
+				BDC99B0328C6264500E7039A /* SeSAC_Memo_Core.framework */,
+				BDC99B1C28C62A7100E7039A /* SeSAC_Memo_UIKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,7 +218,7 @@
 			children = (
 				BD69ED0828C09F9200D62240 /* MemoList */,
 				BD69ED0928C09FB300D62240 /* MemoWrite */,
-				BD69ED0728C09F8D00D62240 /* Pop Up */,
+				BD69ED0728C09F8D00D62240 /* Welcome */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -163,8 +235,9 @@
 		BD69ED0328C09F2900D62240 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				BD69ED1C28C0A48000D62240 /* Memo.swift */,
-				BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */,
+				BD81384E28C72A9500BE3901 /* Interface */,
+				BD81384B28C7291A00BE3901 /* Presentation */,
+				BD81384A28C7291700BE3901 /* Domain */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -172,13 +245,8 @@
 		BD69ED0428C09F5500D62240 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BD69ED1028C0A0D000D62240 /* Base */,
-				BD69ED3428C0ED4200D62240 /* Design System */,
 				BD69ED2C28C0C94500D62240 /* Enum */,
-				BD96C5DC28C3714E000621E6 /* Foundation+ */,
 				BD69ED2F28C0CA5F00D62240 /* Helper */,
-				BD69ED1728C0A10700D62240 /* Protocol */,
-				BD69ED0528C09F6400D62240 /* UIKit+ */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -188,25 +256,26 @@
 			children = (
 				BD69ED1A28C0A13200D62240 /* UIView+.swift */,
 				BDC99AF928C4EEE400E7039A /* UILabel+.swift */,
+				BD81385428C730FB00BE3901 /* UIViewController+.swift */,
 			);
 			path = "UIKit+";
 			sourceTree = "<group>";
 		};
-		BD69ED0728C09F8D00D62240 /* Pop Up */ = {
+		BD69ED0728C09F8D00D62240 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				BD69ED0E28C0A02000D62240 /* PopUpViewController.swift */,
-				BD69ED3828C0FA0100D62240 /* PopUpView.swift */,
+				BD69ED3828C0FA0100D62240 /* WelcomeView.swift */,
+				BD69ED0E28C0A02000D62240 /* WelcomeViewController.swift */,
 			);
-			path = "Pop Up";
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		BD69ED0828C09F9200D62240 /* MemoList */ = {
 			isa = PBXGroup;
 			children = (
 				BD69ED0A28C0A00100D62240 /* MemoListViewController.swift */,
-				BD45B02928C113F300C271AA /* MemoListViewModel.swift */,
 				BD45B02F28C1158000C271AA /* View */,
+				BD81384F28C72AD600BE3901 /* ViewModel */,
 			);
 			path = MemoList;
 			sourceTree = "<group>";
@@ -215,8 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				BD69ED0C28C0A01300D62240 /* MemoWriteViewController.swift */,
-				BD2E849928C47651001AB7D0 /* MemoWriteViewModel.swift */,
 				BD96C5E528C3B4D6000621E6 /* View */,
+				BD81385128C72AF900BE3901 /* ViewModel */,
 			);
 			path = MemoWrite;
 			sourceTree = "<group>";
@@ -242,8 +311,8 @@
 		BD69ED2C28C0C94500D62240 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				BD69ED2D28C0C95400D62240 /* DeviceType.swift */,
 				BD96C5DF28C38584000621E6 /* DateFormatType.swift */,
+				BD69ED2D28C0C95400D62240 /* DeviceType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -251,19 +320,51 @@
 		BD69ED2F28C0CA5F00D62240 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */,
 				BD45B02528C1055200C271AA /* MemoRepository.swift */,
 				BD96C5DA28C34E34000621E6 /* Observable.swift */,
+				BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		BD69ED3428C0ED4200D62240 /* Design System */ = {
+		BD81384A28C7291700BE3901 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				BD69ED3628C0ED5C00D62240 /* ColorFactory.swift */,
+				BD69ED1C28C0A48000D62240 /* Memo.swift */,
 			);
-			path = "Design System";
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BD81384B28C7291A00BE3901 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BD81384C28C729E700BE3901 /* MemoPresentationModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		BD81384E28C72A9500BE3901 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		BD81384F28C72AD600BE3901 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BD45B02928C113F300C271AA /* MemoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BD81385128C72AF900BE3901 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BD2E849928C47651001AB7D0 /* MemoWriteViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BD96C5DC28C3714E000621E6 /* Foundation+ */ = {
@@ -283,7 +384,66 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BDC99B0428C6264500E7039A /* SeSAC-Memo-Core */ = {
+			isa = PBXGroup;
+			children = (
+				BDC99B0528C6264500E7039A /* SeSAC_Memo_Core.h */,
+				BD69ED1028C0A0D000D62240 /* Base */,
+				BD96C5DC28C3714E000621E6 /* Foundation+ */,
+				BD69ED1728C0A10700D62240 /* Protocol */,
+				BD69ED0528C09F6400D62240 /* UIKit+ */,
+			);
+			path = "SeSAC-Memo-Core";
+			sourceTree = "<group>";
+		};
+		BDC99B1D28C62A7100E7039A /* SeSAC-Memo-UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				BDC99B2C28C62ADA00E7039A /* Images */,
+				BDC99B2B28C62ACD00E7039A /* Colors */,
+				BDC99B1E28C62A7100E7039A /* SeSAC_Memo_UIKit.h */,
+			);
+			path = "SeSAC-Memo-UIKit";
+			sourceTree = "<group>";
+		};
+		BDC99B2B28C62ACD00E7039A /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				BDC99B2728C62A9000E7039A /* Colors.xcassets */,
+				BDC99B2D28C642EF00E7039A /* ThemeManager.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		BDC99B2C28C62ADA00E7039A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BDC99B2928C62A9D00E7039A /* Images.xcassets */,
+				BD81385228C72DE300BE3901 /* UIImage+.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BDC99AFE28C6264500E7039A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC99B0628C6264500E7039A /* SeSAC_Memo_Core.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC99B1728C62A7100E7039A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC99B1F28C62A7100E7039A /* SeSAC_Memo_UIKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		BD69ECE828C09CE300D62240 /* SeSAC-Memo */ = {
@@ -294,10 +454,13 @@
 				BD69ECE528C09CE300D62240 /* Sources */,
 				BD69ECE628C09CE300D62240 /* Frameworks */,
 				BD69ECE728C09CE300D62240 /* Resources */,
+				BDC99B0B28C6264500E7039A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BDC99B0828C6264500E7039A /* PBXTargetDependency */,
+				BDC99B2128C62A7100E7039A /* PBXTargetDependency */,
 			);
 			name = "SeSAC-Memo";
 			packageProductDependencies = (
@@ -309,6 +472,42 @@
 			productName = "SeSAC-Memo";
 			productReference = BD69ECE928C09CE300D62240 /* SeSAC-Memo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BDC99B0228C6264500E7039A /* SeSAC-Memo-Core */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDC99B0E28C6264500E7039A /* Build configuration list for PBXNativeTarget "SeSAC-Memo-Core" */;
+			buildPhases = (
+				BDC99AFE28C6264500E7039A /* Headers */,
+				BDC99AFF28C6264500E7039A /* Sources */,
+				BDC99B0028C6264500E7039A /* Frameworks */,
+				BDC99B0128C6264500E7039A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SeSAC-Memo-Core";
+			productName = "SeSAC-Memo-Core";
+			productReference = BDC99B0328C6264500E7039A /* SeSAC_Memo_Core.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BDC99B1B28C62A7100E7039A /* SeSAC-Memo-UIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDC99B2428C62A7100E7039A /* Build configuration list for PBXNativeTarget "SeSAC-Memo-UIKit" */;
+			buildPhases = (
+				BDC99B1728C62A7100E7039A /* Headers */,
+				BDC99B1828C62A7100E7039A /* Sources */,
+				BDC99B1928C62A7100E7039A /* Frameworks */,
+				BDC99B1A28C62A7100E7039A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SeSAC-Memo-UIKit";
+			productName = "SeSAC-Memo-UIKit";
+			productReference = BDC99B1C28C62A7100E7039A /* SeSAC_Memo_UIKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -322,6 +521,13 @@
 				TargetAttributes = {
 					BD69ECE828C09CE300D62240 = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					BDC99B0228C6264500E7039A = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					BDC99B1B28C62A7100E7039A = {
+						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -344,6 +550,8 @@
 			projectRoot = "";
 			targets = (
 				BD69ECE828C09CE300D62240 /* SeSAC-Memo */,
+				BDC99B0228C6264500E7039A /* SeSAC-Memo-Core */,
+				BDC99B1B28C62A7100E7039A /* SeSAC-Memo-UIKit */,
 			);
 		};
 /* End PBXProject section */
@@ -356,6 +564,22 @@
 				BD69ED2B28C0A6C700D62240 /* .swiftlint.yml in Resources */,
 				BD69ECF928C09CE500D62240 /* LaunchScreen.storyboard in Resources */,
 				BD69ECF628C09CE500D62240 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC99B0128C6264500E7039A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC99B1A28C62A7100E7039A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC99B2828C62A9100E7039A /* Colors.xcassets in Resources */,
+				BDC99B2A28C62A9D00E7039A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,37 +611,67 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDC99AFA28C4EEE400E7039A /* UILabel+.swift in Sources */,
-				BD69ED3728C0ED5C00D62240 /* ColorFactory.swift in Sources */,
 				BD96C5E028C38584000621E6 /* DateFormatType.swift in Sources */,
-				BD69ED1628C0A0FA00D62240 /* BaseTableViewCell.swift in Sources */,
 				BD69ED0B28C0A00100D62240 /* MemoListViewController.swift in Sources */,
-				BD69ED0F28C0A02000D62240 /* PopUpViewController.swift in Sources */,
+				BD69ED0F28C0A02000D62240 /* WelcomeViewController.swift in Sources */,
 				BD69ED3328C0D9EB00D62240 /* MemoProtocol.swift in Sources */,
-				BD69ED1928C0A11400D62240 /* Reusable.swift in Sources */,
 				BD45B02C28C1141000C271AA /* MemoListView.swift in Sources */,
 				BD45B02628C1055200C271AA /* MemoRepository.swift in Sources */,
-				BD69ED1B28C0A13200D62240 /* UIView+.swift in Sources */,
 				BD45B02A28C113F300C271AA /* MemoListViewModel.swift in Sources */,
 				BD96C5DB28C34E34000621E6 /* Observable.swift in Sources */,
 				BD69ED0D28C0A01300D62240 /* MemoWriteViewController.swift in Sources */,
 				BD45B02E28C1157C00C271AA /* MemoCell.swift in Sources */,
 				BD69ED1D28C0A48000D62240 /* Memo.swift in Sources */,
 				BD96C5E728C3B4DE000621E6 /* MemoWriteView.swift in Sources */,
-				BD96C5E228C397C9000621E6 /* Date+.swift in Sources */,
-				BD69ED3928C0FA0100D62240 /* PopUpView.swift in Sources */,
+				BD69ED3928C0FA0100D62240 /* WelcomeView.swift in Sources */,
+				BD81384D28C729E700BE3901 /* MemoPresentationModel.swift in Sources */,
 				BD2E849A28C47651001AB7D0 /* MemoWriteViewModel.swift in Sources */,
-				BD96C5DE28C37158000621E6 /* Int+.swift in Sources */,
-				BD69ED1228C0A0EC00D62240 /* BaseView.swift in Sources */,
 				BD69ECED28C09CE300D62240 /* AppDelegate.swift in Sources */,
 				BD69ED2E28C0C95400D62240 /* DeviceType.swift in Sources */,
-				BD69ED1428C0A0F100D62240 /* BaseViewController.swift in Sources */,
 				BD69ECEF28C09CE300D62240 /* SceneDelegate.swift in Sources */,
 				BD69ED3128C0CA6F00D62240 /* PreviewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BDC99AFF28C6264500E7039A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC99B1428C627C500E7039A /* Reusable.swift in Sources */,
+				BDC99B0F28C6274800E7039A /* BaseView.swift in Sources */,
+				BDC99B1128C627BC00E7039A /* BaseTableViewCell.swift in Sources */,
+				BDC99B1328C627C200E7039A /* Date+.swift in Sources */,
+				BDC99B1628C627CC00E7039A /* UIView+.swift in Sources */,
+				BD81385528C730FB00BE3901 /* UIViewController+.swift in Sources */,
+				BDC99B1528C627CA00E7039A /* UILabel+.swift in Sources */,
+				BDC99B1028C627BA00E7039A /* BaseViewController.swift in Sources */,
+				BDC99B1228C627C000E7039A /* Int+.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC99B1828C62A7100E7039A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC99B2E28C642EF00E7039A /* ThemeManager.swift in Sources */,
+				BD81385328C72DE300BE3901 /* UIImage+.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BDC99B0828C6264500E7039A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDC99B0228C6264500E7039A /* SeSAC-Memo-Core */;
+			targetProxy = BDC99B0728C6264500E7039A /* PBXContainerItemProxy */;
+		};
+		BDC99B2128C62A7100E7039A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDC99B1B28C62A7100E7039A /* SeSAC-Memo-UIKit */;
+			targetProxy = BDC99B2028C62A7100E7039A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BD69ECF728C09CE500D62240 /* LaunchScreen.storyboard */ = {
@@ -548,6 +802,7 @@
 		BD69ECFE28C09CE500D62240 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -555,6 +810,7 @@
 				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SeSAC-Memo/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "김태현B";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -576,6 +832,7 @@
 		BD69ECFF28C09CE500D62240 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -583,6 +840,7 @@
 				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SeSAC-Memo/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "김태현B";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -598,6 +856,137 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		BDC99B0C28C6264500E7039A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W7P3R7ZL78;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taekki.SeSAC-Memo-Core";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BDC99B0D28C6264500E7039A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W7P3R7ZL78;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taekki.SeSAC-Memo-Core";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BDC99B2528C62A7100E7039A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W7P3R7ZL78;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taekki.SeSAC-Memo-UIKit";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BDC99B2628C62A7100E7039A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W7P3R7ZL78;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taekki.SeSAC-Memo-UIKit";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -618,6 +1007,24 @@
 			buildConfigurations = (
 				BD69ECFE28C09CE500D62240 /* Debug */,
 				BD69ECFF28C09CE500D62240 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDC99B0E28C6264500E7039A /* Build configuration list for PBXNativeTarget "SeSAC-Memo-Core" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDC99B0C28C6264500E7039A /* Debug */,
+				BDC99B0D28C6264500E7039A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDC99B2428C62A7100E7039A /* Build configuration list for PBXNativeTarget "SeSAC-Memo-UIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDC99B2528C62A7100E7039A /* Debug */,
+				BDC99B2628C62A7100E7039A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
