@@ -9,7 +9,7 @@ import Foundation
 
 extension Int {
     
-    func toDecimal() -> String {
+    public func toDecimal() -> String {
         let numberFormat = NumberFormatter()
         numberFormat.numberStyle = .decimal
         return numberFormat.string(for: self) ?? "\(self)"

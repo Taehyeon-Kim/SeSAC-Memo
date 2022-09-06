@@ -9,7 +9,7 @@ import UIKit
 
 extension UILabel {
     
-    func changeTextColor(of target: String, color: UIColor) {
+    public func changeTextColor(of target: String, color: UIColor) {
         let text = text ?? ""
         let attributedString = NSMutableAttributedString(string: text)
         let range = (text as NSString).range(of: target)

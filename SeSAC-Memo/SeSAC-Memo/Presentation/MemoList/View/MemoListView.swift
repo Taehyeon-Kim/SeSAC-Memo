@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SeSAC_Memo_UIKit
+import SeSAC_Memo_Core
 
 import SnapKit
 import Then
@@ -30,10 +32,10 @@ final class MemoListView: BaseView {
         }
         
         toolbar.do {
-            let writeItem = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: nil, action: #selector(writeItemTapped))
+            let writeItem = UIBarButtonItem(image: .icnWrite, style: .plain, target: nil, action: #selector(writeItemTapped))
             let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-            $0.backgroundColor = ColorFactory.shared.create(.background)
-            $0.tintColor = ColorFactory.shared.create(.primary)
+            $0.backgroundColor = ThemeManager.currentTheme().backgroundColor
+            $0.tintColor = ThemeManager.currentTheme().pointColor
             $0.setItems([flexibleSpace, writeItem], animated: true)
         }
     }

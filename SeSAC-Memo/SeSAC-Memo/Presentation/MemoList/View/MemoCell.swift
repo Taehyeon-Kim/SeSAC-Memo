@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SeSAC_Memo_UIKit
+import SeSAC_Memo_Core
 
 final class MemoCell: BaseTableViewCell {
     
@@ -16,7 +18,7 @@ final class MemoCell: BaseTableViewCell {
     private let descriptionLabel = UILabel()
     
     override func configureAttributes() {
-        backgroundColor = ColorFactory.shared.create(.cellBackground)
+        backgroundColor = ThemeManager.currentTheme().cellBackgroundColor
         
         containerVStackView.do {
             $0.axis = .vertical
@@ -24,12 +26,12 @@ final class MemoCell: BaseTableViewCell {
         }
         
         titleLabel.do {
-            $0.textColor = ColorFactory.shared.create(.label)
+            $0.textColor = ThemeManager.currentTheme().titleTextColor
             $0.font = .boldSystemFont(ofSize: 17)
         }
         
         descriptionLabel.do {
-            $0.textColor = ColorFactory.shared.create(.grey800)
+            $0.textColor = ThemeManager.currentTheme().subtitleTextColor
             $0.font = .systemFont(ofSize: 15)
         }
     }
@@ -44,8 +46,8 @@ final class MemoCell: BaseTableViewCell {
     }
     
     override func prepareForReuse() {
-        titleLabel.textColor = ColorFactory.shared.create(.label)
-        descriptionLabel.textColor = ColorFactory.shared.create(.label)
+        titleLabel.textColor = ThemeManager.currentTheme().titleTextColor
+        descriptionLabel.textColor = ThemeManager.currentTheme().subtitleTextColor
     }
 }
 
@@ -60,7 +62,7 @@ extension MemoCell {
         descriptionLabel.text = "\(dateString) \(content)"
         
         let color = isSearchMode ?
-        ColorFactory.shared.create(.primary) : ColorFactory.shared.create(.label)
+        ThemeManager.currentTheme().pointColor : ThemeManager.currentTheme().titleTextColor
         titleLabel.changeTextColor(of: keyword ?? "", color: color)
         descriptionLabel.changeTextColor(of: keyword ?? "", color: color)
     }
