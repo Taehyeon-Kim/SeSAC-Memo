@@ -44,7 +44,7 @@ final class MemoListViewController: BaseViewController {
     }
     
     override func configureAttributes() {
-        view.backgroundColor = ColorFactory.shared.create(.background)
+        view.backgroundColor = ThemeManager.currentTheme().backgroundColor
     }
     
     func checkFirstLaunch() {
@@ -67,7 +67,7 @@ extension MemoListViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "검색"
         searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
-        searchController.searchBar.tintColor = ColorFactory.shared.create(.primary)
+        searchController.searchBar.tintColor = ThemeManager.currentTheme().pointColor
         searchController.searchBar.delegate = self
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = true
@@ -170,7 +170,7 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
             completionHaldler(true)
         }
         let memo = memoListViewModel.memo.value[indexPath.section][indexPath.row]
-        pinAction.backgroundColor = ColorFactory.shared.create(.primary)
+        pinAction.backgroundColor = ThemeManager.currentTheme().pointColor
         pinAction.image = memo.pinned ? UIImage(systemName: "pin.fill") : UIImage(systemName: "pin")
         return UISwipeActionsConfiguration(actions: [pinAction])
     }

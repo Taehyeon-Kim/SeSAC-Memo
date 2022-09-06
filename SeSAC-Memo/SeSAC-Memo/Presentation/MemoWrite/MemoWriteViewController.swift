@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SeSAC_Memo_UIKit
 
 final class MemoWriteViewController: UIViewController {
     
@@ -68,7 +69,7 @@ final class MemoWriteViewController: UIViewController {
 extension MemoWriteViewController {
     
     private func configureNavigationBar() {
-        navigationController?.navigationBar.tintColor = ColorFactory.shared.create(.primary)
+        navigationController?.navigationBar.tintColor = ThemeManager.currentTheme().pointColor
         navigationItem.rightBarButtonItems = [doneItem, shareItem]
     }
     

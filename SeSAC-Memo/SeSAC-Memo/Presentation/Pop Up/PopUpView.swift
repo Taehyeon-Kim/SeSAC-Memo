@@ -6,8 +6,9 @@
 //
 
 import UIKit
-
 import SeSAC_Memo_Core
+import SeSAC_Memo_UIKit
+
 import SnapKit
 import Then
 
@@ -21,11 +22,11 @@ final class PopUpView: BaseView {
     override func configureAttributes() {
         dimmedView.do {
             $0.alpha = 0.9
-            $0.backgroundColor = ColorFactory.shared.create(.black)
+            $0.backgroundColor = ThemeManager.currentTheme().titleTextColor
         }
         
         containerView.do {
-            $0.backgroundColor = ColorFactory.shared.create(.popUp)
+            $0.backgroundColor = ThemeManager.currentTheme().popUpBackgroundColor
             $0.layer.cornerRadius = 12
         }
         
@@ -38,14 +39,14 @@ final class PopUpView: BaseView {
             당신만의 메모를 작성하고
             관리해보세요!
             """
-            $0.textColor = ColorFactory.shared.create(.label)
+            $0.textColor = ThemeManager.currentTheme().titleTextColor
             $0.font = .boldSystemFont(ofSize: 18)
         }
         
         confirmButton.do {
-            $0.backgroundColor = ColorFactory.shared.create(.primary)
+            $0.backgroundColor = ThemeManager.currentTheme().pointColor
             $0.setTitle("확인", for: .normal)
-            $0.setTitleColor(ColorFactory.shared.create(.white), for: .normal)
+            $0.setTitleColor(ThemeManager.currentTheme().titleTextColor, for: .normal)
             $0.layer.cornerRadius = 8
         }
     }

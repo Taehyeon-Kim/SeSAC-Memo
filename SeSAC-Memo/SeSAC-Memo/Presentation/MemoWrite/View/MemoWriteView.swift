@@ -6,8 +6,9 @@
 //
 
 import UIKit
-
+import SeSAC_Memo_UIKit
 import SeSAC_Memo_Core
+
 import SnapKit
 import Then
 
@@ -23,21 +24,21 @@ final class MemoWriteView: BaseView {
     }
     
     override func configureAttributes() {
-        backgroundColor = ColorFactory.shared.create(.background)
+        backgroundColor = ThemeManager.currentTheme().backgroundColor
         
         containerStackView.do {
             $0.axis = .vertical
         }
         
         titleTextView.do {
-            $0.backgroundColor = ColorFactory.shared.create(.background)
+            $0.backgroundColor = ThemeManager.currentTheme().backgroundColor
             $0.textColor = .label
             $0.font = .boldSystemFont(ofSize: 22)
             $0.isScrollEnabled = false
         }
         
         contentTextView.do {
-            $0.backgroundColor = ColorFactory.shared.create(.background)
+            $0.backgroundColor = ThemeManager.currentTheme().backgroundColor
             $0.textColor = .label
             $0.font = .systemFont(ofSize: 17)
             $0.isScrollEnabled = false

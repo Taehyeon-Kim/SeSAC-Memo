@@ -51,7 +51,7 @@ public enum Theme: Int {
     public var subtitleTextColor: UIColor {
         switch self {
         case .theme1:
-            return UIColor.systemGray2
+            return UIColor.systemGray
         }
     }
 }
