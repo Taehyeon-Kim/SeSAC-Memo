@@ -18,7 +18,7 @@ final class MemoWriteViewModel {
     var isEditingMode = Observable(false)
     
     // 메모 저장
-    func write(_ memo: MemoInterface) {
+    func write(_ memo: MemoPresentationModel) {
         repository.write(memo)
     }
     

@@ -1,5 +1,5 @@
 //
-//  PopUpView.swift
+//  WelcomeView.swift
 //  SeSAC-Memo
 //
 //  Created by taekki on 2022/09/01.
@@ -12,7 +12,7 @@ import SeSAC_Memo_UIKit
 import SnapKit
 import Then
 
-final class PopUpView: BaseView {
+final class WelcomeView: BaseView {
     
     private let dimmedView = UIView()
     private let containerView = UIView()

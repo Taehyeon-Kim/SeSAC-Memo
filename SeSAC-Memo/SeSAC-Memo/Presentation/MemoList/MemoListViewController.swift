@@ -51,10 +51,10 @@ final class MemoListViewController: BaseViewController {
         let isFirstLaunch = UserDefaults.standard.object(forKey: "isFirstLaunch")
         
         if isFirstLaunch == nil || isFirstLaunch as? Bool == true {
-            let popUpViewController = PopUpViewController()
-            popUpViewController.modalPresentationStyle = .overFullScreen
-            popUpViewController.modalTransitionStyle = .crossDissolve
-            present(popUpViewController, animated: true)
+            let welcomeViewController = WelcomeViewController()
+            welcomeViewController.modalPresentationStyle = .overFullScreen
+            welcomeViewController.modalTransitionStyle = .crossDissolve
+            present(welcomeViewController, animated: true)
         }
         
         UserDefaults.standard.set(false, forKey: "isFirstLaunch")

@@ -104,7 +104,7 @@ extension MemoWriteViewController {
         let newTitle: String? = title.isEmpty ? nil : title
         let newContent: String? = (content.isEmpty || content.trimmingCharacters(in: .newlines).isEmpty) ? nil : content
         
-        let memo = MemoInterface(title: newTitle, content: newContent)
+        let memo = MemoPresentationModel(title: newTitle, content: newContent)
         
         if memoWriteViewModel.isWritingMode.value {
             memoWriteViewModel.write(memo)

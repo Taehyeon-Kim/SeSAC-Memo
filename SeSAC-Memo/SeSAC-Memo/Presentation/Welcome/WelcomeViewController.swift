@@ -1,5 +1,5 @@
 //
-//  PopUpViewController.swift
+//  WelcomeViewController.swift
 //  SeSAC-Memo
 //
 //  Created by taekki on 2022/09/01.
@@ -9,9 +9,9 @@ import UIKit
 
 import SeSAC_Memo_Core
 
-final class PopUpViewController: BaseViewController {
+final class WelcomeViewController: BaseViewController {
     
-    private let rootView = PopUpView()
+    private let rootView = WelcomeView()
     
     override func loadView() {
         self.view = rootView
