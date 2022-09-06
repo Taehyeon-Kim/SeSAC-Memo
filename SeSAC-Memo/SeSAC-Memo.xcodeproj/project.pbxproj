@@ -231,6 +231,7 @@
 		BD69ED0328C09F2900D62240 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				BD81384E28C72A9500BE3901 /* Interface */,
 				BD81384B28C7291A00BE3901 /* Presentation */,
 				BD81384A28C7291700BE3901 /* Domain */,
 			);
@@ -325,7 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				BD69ED1C28C0A48000D62240 /* Memo.swift */,
-				BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -336,6 +336,14 @@
 				BD81384C28C729E700BE3901 /* MemoPresentationModel.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		BD81384E28C72A9500BE3901 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		BD96C5DC28C3714E000621E6 /* Foundation+ */ = {
