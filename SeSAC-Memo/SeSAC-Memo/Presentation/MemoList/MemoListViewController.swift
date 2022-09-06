@@ -12,9 +12,16 @@ import SeSAC_Memo_UIKit
 
 final class MemoListViewController: BaseViewController {
    
+    // MARK: - Properties
+    
     private let memoListViewModel = MemoListViewModel()
+    private let theme = ThemeManager.currentTheme()
+    
+    // MARK: - UI Properties
     
     private let rootView = MemoListView()
+    
+    // MARK: - Life Cycles
     
     override func loadView() {
         self.view = rootView
@@ -23,43 +30,29 @@ final class MemoListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureSearchController()
-        configureTableView()
-        configureToolbar()
         bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        
-        checkFirstLaunch()
-        
-        if self.memoListViewModel.isSearchMode.value {
-            self.memoListViewModel.searchMemo(by: self.memoListViewModel.searchKeyword.value)
-        } else {
-            self.memoListViewModel.fetchMemo()
-        }
+        navigationController?.navigationBar.prefersLargeTitles = true
+        checkForFirstLaunch()
+        checkIfSearchMode()
     }
+    
+    // MARK: - Override Functions
     
     override func configureAttributes() {
-        view.backgroundColor = ThemeManager.currentTheme().backgroundColor
-    }
-    
-    func checkFirstLaunch() {
-        let isFirstLaunch = UserDefaults.standard.object(forKey: "isFirstLaunch")
+        view.backgroundColor = theme.backgroundColor
         
-        if isFirstLaunch == nil || isFirstLaunch as? Bool == true {
-            let welcomeViewController = WelcomeViewController()
-            welcomeViewController.modalPresentationStyle = .overFullScreen
-            welcomeViewController.modalTransitionStyle = .crossDissolve
-            present(welcomeViewController, animated: true)
-        }
-        
-        UserDefaults.standard.set(false, forKey: "isFirstLaunch")
+        configureSearchController()
+        configureTableView()
+        configureToolbar()
     }
 }
+
+// MARK: - Private Functions
 
 extension MemoListViewController {
     
@@ -67,7 +60,7 @@ extension MemoListViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "검색"
         searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
-        searchController.searchBar.tintColor = ThemeManager.currentTheme().pointColor
+        searchController.searchBar.tintColor = theme.pointColor
         searchController.searchBar.delegate = self
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = true
@@ -80,10 +73,10 @@ extension MemoListViewController {
     }
     
     private func configureToolbar() {
-        self.rootView.writeHandler = {
-            let memoWriteViewController = MemoWriteViewController()
-            memoWriteViewController.memoWriteViewModel.isWritingMode.value = true
-            self.navigationController?.pushViewController(memoWriteViewController, animated: true)
+        self.rootView.writeHandler = { [weak self] in
+            self?.transition(MemoWriteViewController(), transitionStyle: .push) { viewController in
+                viewController.memoWriteViewModel.isWritingMode.value = true
+            }
         }
     }
     
@@ -98,20 +91,50 @@ extension MemoListViewController {
             self.navigationItem.title = countString
         }
         
-        memoListViewModel.isSearchMode.bind { isSearchMode in
+        memoListViewModel.isSearching.bind { isSearchMode in
             let backButton = UIBarButtonItem()
-            backButton.title = isSearchMode ? "검색" : "메모"
-            self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+            var backButtonTitle = ""
             
+            if isSearchMode {
+                self.memoListViewModel.searchMemo(by: self.memoListViewModel.searchKeyword.value)
+                backButtonTitle = "검색"
+                
+            } else {
+                self.memoListViewModel.fetchMemo()
+                backButtonTitle = "메모"
+            }
+            
+            backButton.title = backButtonTitle
+            self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
             self.rootView.tableView.reloadData()
+        }
+    }
+    
+    func checkForFirstLaunch() {
+        let isFirstLaunch = UserDefaults.standard.object(forKey: "isFirstLaunch")
+        
+        if isFirstLaunch == nil || isFirstLaunch as? Bool == true {
+            self.transition(WelcomeViewController(), transitionStyle: .presentCrossDisolve)
+        }
+        
+        UserDefaults.standard.set(false, forKey: "isFirstLaunch")
+    }
+    
+    func checkIfSearchMode() {
+        if self.memoListViewModel.isSearching.value {
+            self.memoListViewModel.searchMemo(by: self.memoListViewModel.searchKeyword.value)
+        } else {
+            self.memoListViewModel.fetchMemo()
         }
     }
 }
 
-extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - UITableViewDelegate
+
+extension MemoListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return memoListViewModel.titleForHeaderInSection(at: section, isSearchMode: memoListViewModel.isSearchMode.value)
+        return memoListViewModel.titleForHeaderInSection(at: section, isSearchMode: memoListViewModel.isSearching.value)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -126,6 +149,48 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let memoWriteViewController = MemoWriteViewController()
+        let memo = memoListViewModel.memo.value[indexPath.section][indexPath.row]
+        memoWriteViewController.memoWriteViewModel.title.value = memo.title ?? ""
+        memoWriteViewController.memoWriteViewModel.content.value = memo.content ?? ""
+        memoWriteViewController.memoWriteViewModel.isWritingMode.value = false
+        memoWriteViewController.memoWriteViewModel.memo.value = memo
+        self.navigationController?.pushViewController(memoWriteViewController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let pinAction = UIContextualAction(style: .normal, title: nil) { _, _, completionHaldler in
+            self.memoListViewModel.pinMemo(indexPath: indexPath) {
+                self.presentAlert(title: "메모는 최대 5개까지 고정할 수 있어요!")
+            }
+            self.checkIfSearchMode()
+            completionHaldler(true)
+        }
+        
+        let memo = memoListViewModel.memo.value[indexPath.section][indexPath.row]
+        pinAction.backgroundColor = ThemeManager.currentTheme().pointColor
+        pinAction.image = memo.pinned ? .icnPinFill : .icnPin
+        return UISwipeActionsConfiguration(actions: [pinAction])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completionHaldler in
+            self.presentAlert(title: "정말로 삭제하실건가요?", isIncludedCancel: true) { _ in
+                self.memoListViewModel.deleteMemo(indexPath: indexPath)
+                self.checkIfSearchMode()
+            }
+            completionHaldler(true)
+        }
+        deleteAction.image = .icnDelete
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension MemoListViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return memoListViewModel.numberOfSections
     }
@@ -137,76 +202,14 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         memoListViewModel.cellForRowAt(tableView, indexPath: indexPath, keyword: navigationItem.searchController?.searchBar.text)
     }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completionHaldler in
-            self.presentAlert(title: "정말로 삭제하실건가요?", isIncludedCancel: true) { _ in
-                self.memoListViewModel.deleteMemo(indexPath: indexPath)
-                
-                if self.memoListViewModel.isSearchMode.value {
-                    self.memoListViewModel.searchMemo(by: self.memoListViewModel.searchKeyword.value)
-                } else {
-                    self.memoListViewModel.fetchMemo()
-                }
-            }
-            completionHaldler(true)
-        }
-        deleteAction.image = .icnDelete
-        return UISwipeActionsConfiguration(actions: [deleteAction])
-    }
-    
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let pinAction = UIContextualAction(style: .normal, title: nil) { _, _, completionHaldler in
-            self.memoListViewModel.pinMemo(indexPath: indexPath) {
-                self.presentAlert(title: "메모는 최대 5개까지 고정할 수 있어요!")
-            }
-            
-            if self.memoListViewModel.isSearchMode.value {
-                self.memoListViewModel.searchMemo(by: self.memoListViewModel.searchKeyword.value)
-            } else {
-                self.memoListViewModel.fetchMemo()
-            }
-            
-            completionHaldler(true)
-        }
-        let memo = memoListViewModel.memo.value[indexPath.section][indexPath.row]
-        pinAction.backgroundColor = ThemeManager.currentTheme().pointColor
-        pinAction.image = memo.pinned ? .icnPinFill : .icnPin
-        return UISwipeActionsConfiguration(actions: [pinAction])
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let memoWriteViewController = MemoWriteViewController()
-        let memo = memoListViewModel.memo.value[indexPath.section][indexPath.row]
-        memoWriteViewController.memoWriteViewModel.title.value = memo.title ?? ""
-        memoWriteViewController.memoWriteViewModel.content.value = memo.content ?? ""
-        memoWriteViewController.memoWriteViewModel.isWritingMode.value = false
-        memoWriteViewController.memoWriteViewModel.memo.value = memo
-        self.navigationController?.pushViewController(memoWriteViewController, animated: true)
-    }
 }
 
-extension UIViewController {
-    
-    func presentAlert(title: String, message: String? = nil, isIncludedCancel: Bool = false, completion: ((UIAlertAction) -> Void)? = nil) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        if isIncludedCancel {
-            let deleteAction = UIAlertAction(title: "취소", style: .cancel)
-            alertController.addAction(deleteAction)
-        }
-
-        let okAction = UIAlertAction(title: "확인", style: .default, handler: completion)
-        
-        alertController.addAction(okAction)
-        present(alertController, animated: true)
-    }
-}
+// MARK: - UISearchBarDelegate
 
 extension MemoListViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        memoListViewModel.isSearchMode.value = true
+        memoListViewModel.isSearching.value = true
         guard let keyword = searchBar.text else { return }
         memoListViewModel.searchKeyword.value = keyword
         memoListViewModel.searchMemo(by: keyword)
@@ -226,7 +229,7 @@ extension MemoListViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        memoListViewModel.isSearchMode.value = false
+        memoListViewModel.isSearching.value = false
         memoListViewModel.fetchMemo()
     }
 }

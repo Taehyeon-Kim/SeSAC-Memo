@@ -16,8 +16,11 @@ final class MemoListViewModel {
     
     var memo: Observable<[[Memo]]> = Observable([])
     var memoCount = Observable("메모 개수")
-    var isSearchMode = Observable(false)
+    var isSearching = Observable(false)
     var searchKeyword = Observable("")
+}
+
+extension MemoListViewModel {
     
     func titleForHeaderInSection(at section: Int, isSearchMode: Bool = false) -> String? {
         
@@ -50,7 +53,7 @@ final class MemoListViewModel {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MemoCell.reuseIdentifier, for: indexPath) as? MemoCell else {
             return UITableViewCell()
         }
-        cell.configure(with: memo.value[indexPath.section][indexPath.row], isSearchMode: isSearchMode.value, keyword: keyword)
+        cell.configure(with: memo.value[indexPath.section][indexPath.row], isSearchMode: isSearching.value, keyword: keyword)
         return cell
     }
 }
