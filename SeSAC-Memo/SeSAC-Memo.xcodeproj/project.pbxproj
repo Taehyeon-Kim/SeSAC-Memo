@@ -160,8 +160,8 @@
 		BD45B02F28C1158000C271AA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BD45B02B28C1141000C271AA /* MemoListView.swift */,
 				BD45B02D28C1157C00C271AA /* MemoCell.swift */,
+				BD45B02B28C1141000C271AA /* MemoListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -259,8 +259,8 @@
 		BD69ED0728C09F8D00D62240 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				BD69ED0E28C0A02000D62240 /* WelcomeViewController.swift */,
 				BD69ED3828C0FA0100D62240 /* WelcomeView.swift */,
+				BD69ED0E28C0A02000D62240 /* WelcomeViewController.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -269,8 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				BD69ED0A28C0A00100D62240 /* MemoListViewController.swift */,
-				BD45B02928C113F300C271AA /* MemoListViewModel.swift */,
 				BD45B02F28C1158000C271AA /* View */,
+				BD81384F28C72AD600BE3901 /* ViewModel */,
 			);
 			path = MemoList;
 			sourceTree = "<group>";
@@ -279,8 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				BD69ED0C28C0A01300D62240 /* MemoWriteViewController.swift */,
-				BD2E849928C47651001AB7D0 /* MemoWriteViewModel.swift */,
 				BD96C5E528C3B4D6000621E6 /* View */,
+				BD81385128C72AF900BE3901 /* ViewModel */,
 			);
 			path = MemoWrite;
 			sourceTree = "<group>";
@@ -306,8 +306,8 @@
 		BD69ED2C28C0C94500D62240 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				BD69ED2D28C0C95400D62240 /* DeviceType.swift */,
 				BD96C5DF28C38584000621E6 /* DateFormatType.swift */,
+				BD69ED2D28C0C95400D62240 /* DeviceType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -315,9 +315,9 @@
 		BD69ED2F28C0CA5F00D62240 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */,
 				BD45B02528C1055200C271AA /* MemoRepository.swift */,
 				BD96C5DA28C34E34000621E6 /* Observable.swift */,
+				BD69ED3028C0CA6F00D62240 /* PreviewProvider.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -344,6 +344,22 @@
 				BD69ED3228C0D9EB00D62240 /* MemoProtocol.swift */,
 			);
 			path = Interface;
+			sourceTree = "<group>";
+		};
+		BD81384F28C72AD600BE3901 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BD45B02928C113F300C271AA /* MemoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BD81385128C72AF900BE3901 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BD2E849928C47651001AB7D0 /* MemoWriteViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BD96C5DC28C3714E000621E6 /* Foundation+ */ = {
