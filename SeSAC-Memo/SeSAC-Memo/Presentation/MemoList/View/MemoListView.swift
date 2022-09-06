@@ -32,7 +32,7 @@ final class MemoListView: BaseView {
         }
         
         toolbar.do {
-            let writeItem = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: nil, action: #selector(writeItemTapped))
+            let writeItem = UIBarButtonItem(image: .icnWrite, style: .plain, target: nil, action: #selector(writeItemTapped))
             let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             $0.backgroundColor = ThemeManager.currentTheme().backgroundColor
             $0.tintColor = ThemeManager.currentTheme().pointColor

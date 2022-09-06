@@ -12,7 +12,7 @@ final class MemoWriteViewController: UIViewController {
     
     private let rootView = MemoWriteView()
     lazy var doneItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneButtonTapped))
-    lazy var shareItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonTapped))
+    lazy var shareItem = UIBarButtonItem(image: .icnShare, style: .plain, target: self, action: #selector(shareButtonTapped))
     
     private let memoListViewModel = MemoListViewModel()
     let memoWriteViewModel = MemoWriteViewModel()

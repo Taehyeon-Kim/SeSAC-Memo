@@ -151,7 +151,7 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
             }
             completionHaldler(true)
         }
-        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.image = .icnDelete
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
@@ -171,7 +171,7 @@ extension MemoListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let memo = memoListViewModel.memo.value[indexPath.section][indexPath.row]
         pinAction.backgroundColor = ThemeManager.currentTheme().pointColor
-        pinAction.image = memo.pinned ? UIImage(systemName: "pin.fill") : UIImage(systemName: "pin")
+        pinAction.image = memo.pinned ? .icnPinFill : .icnPin
         return UISwipeActionsConfiguration(actions: [pinAction])
     }
     
